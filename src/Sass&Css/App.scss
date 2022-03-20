@@ -1,0 +1,25 @@
+@import "./variables&functions";
+
+*{
+    margin: 0;
+    padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto";
+}
+
+
+
+.card{
+    @include flexCustom(space-around, center , column);
+    padding: 0px 1em;
+    border-radius: 1em;
+    text-align: center;
+    width: 30%;
+    height: 40%;
+    background-color: $background;
+    z-index: 99;
+    @include absolutecenter;
+  button{
+    @include button;
+}  
+}

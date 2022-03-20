@@ -20,11 +20,15 @@ const Homepage = () => {
       }
 
     return (
+        <section>
         <div>
-            {JSON. stringify(currentUser)}
-            <h2>{currentUser.displayName}</h2>
+      
+            <h2>Welcome {currentUser.displayName} to Memory Game V2!</h2>
+            <img src={currentUser.photoURL}></img>
             <button onClick={handleLogout}>Logout</button>
         </div>
+            
+        </section>
     );
 }
 

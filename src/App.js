@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { AuthProvider } from "./Contexts/AuthContext";
 import Homepage from './Pages/HomePage';
 import Loginpage from './Pages/LoginPage';
+import PrivateRoute from './PrivateRoute';
 import './Sass&Css/App.css';
 
 function App() {
@@ -14,7 +15,9 @@ function App() {
 
           <Route path="/login" exact element={<Loginpage/>} />
 
-          <Route path="/" exact element={<Homepage/>} />
+          <Route exact path="/" element={<PrivateRoute />}>
+              <Route exact path="/" element={<Homepage />} />
+            </Route>
          
           
         </Routes>
