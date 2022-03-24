@@ -23,3 +23,27 @@
     @include button;
 }  
 }
+
+
+.tutorial{
+  @include absolutecenter;
+  background-color: $background;
+  width: 50%;
+  height: 80%;
+  z-index: 98;
+  .tutorial__info{
+    @include flexCenter(column);
+  }
+  div{
+    @include flexCenter(column);
+  }
+  span{
+    color: $red;
+  }
+  img{
+    border-radius: 50%;
+  }
+  button{
+    @include button;
+  }
+}

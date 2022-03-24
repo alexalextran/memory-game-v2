@@ -1,32 +1,22 @@
-import userEvent from '@testing-library/user-event';
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../Contexts/AuthContext';
+
+import React, { useState } from 'react';
+import Game from '../Components/Game';
+import Tutorial from '../Components/Tutorial';
+
+
 
 
 const Homepage = () => {
-    const { logout, currentUser } = useAuth()
-    const navigate = useNavigate()
-    
-
-    async function handleLogout(){
-        try{
-          await logout()
-          navigate("/login");
-        }catch(e){
-          console.log(e)
-          window.alert("Failed to logout!")
-        }
-      }
+ const [tutorial, settutorial] = useState(true);
 
     return (
         <section>
-        <div>
-      
-            <h2>Welcome {currentUser.displayName} to Memory Game V2!</h2>
-            <img src={currentUser.photoURL}></img>
-            <button onClick={handleLogout}>Logout</button>
-        </div>
+        {
+          tutorial ?
+          <Tutorial settutorial={settutorial}/> : <Game />
+
+        }
+       
             
         </section>
     );
