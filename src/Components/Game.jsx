@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Gamebody from './GameBody';
 
 const Game = (props) => {
-    
+    const [run, setrun] = useState(false);
+   
     return (
         <div>
             <div className='game__wrapper'>
             <div className='game__wrapper--header'>
                  <div>
-                    <button onClick={() => props.settutorial(true)}>Back Home</button>
+                    <button onClick={() => props.settutorial(true)}>Back Home</button> <button onClick={() => setrun(true)}>Start Game</button>
                  </div>
                  <div className='header__info'>
                    <ul>
@@ -19,7 +20,7 @@ const Game = (props) => {
                    </ul>
                  </div>
             </div>
-               <Gamebody number={props.number}/>
+               <Gamebody number={props.number} run={run} setrun={setrun}/>
             </div>
         </div>
     );
