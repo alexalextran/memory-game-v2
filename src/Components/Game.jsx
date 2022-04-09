@@ -1,12 +1,14 @@
 import React from 'react';
+import Gamebody from './GameBody';
 
-const Game = () => {
+const Game = (props) => {
+    
     return (
         <div>
             <div className='game__wrapper'>
             <div className='game__wrapper--header'>
                  <div>
-                    <button>Back Home</button>
+                    <button onClick={() => props.settutorial(true)}>Back Home</button>
                  </div>
                  <div className='header__info'>
                    <ul>
@@ -17,7 +19,7 @@ const Game = () => {
                    </ul>
                  </div>
             </div>
-               
+               <Gamebody />
             </div>
         </div>
     );
