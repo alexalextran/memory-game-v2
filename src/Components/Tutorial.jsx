@@ -2,17 +2,12 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../Contexts/AuthContext';
 import useToggle from '../CustomHooks/UseToggle';
+import frog from '../assets/frog.png'
 
 const Tutorial = (props) => {
 
     const { logout, currentUser } = useAuth()
     const navigate = useNavigate()
-
-    function change(){
-        props.settutorial(false)
-    }
-   
-    
 
     async function handleLogout(){
         try{
@@ -37,11 +32,11 @@ const Tutorial = (props) => {
         <h4>Hey, thanks for checking out the new version of MG</h4>
         <p>For any new players, there is a tutorial provided below!</p>
 
-        <div>
-            gif
+        <div className='tutorial__gif'>
+            <img src={frog}></img>
         </div>
 
-        <button onClick={change}>
+        <button onClick={() => {props.settutorial(false)}}>
             I know how to play
         </button>
 
