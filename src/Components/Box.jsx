@@ -2,8 +2,8 @@ import React from 'react';
 
 const Box = (props) => {
     return (
-        <div className='box' /*style={{ width: `${100 / props.number}% `}}*/ >
-            box
+        <div className='box' style={{ height: `${30 / props.number}em ` , width: `${30 / props.number}em `}} >
+            
         </div>
     );
 }

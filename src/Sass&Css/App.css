@@ -43,18 +43,18 @@ html li {
 
 .card button {
   position: relative;
-  padding: 10px 40px;
-  margin: 0px 10px 10px 0px;
-  border-radius: 3px;
-  font-size: 20px;
+  padding: 0.6rem 1.5rem;
+  margin: 0rem 0.7rem 0.7rem 0rem;
+  border-radius: 0.3rem;
+  font-size: 1rem;
   color: #FFF;
   text-decoration: none;
   background-color: #2ecc71;
   border: none;
-  border-bottom: 5px solid #27ae60;
-  text-shadow: 0px -2px #27ae60;
-  -webkit-transition: all 0.1s;
-  transition: all 0.1s;
+  border-bottom: 0.3rem solid #27ae60;
+  text-shadow: 0px -0.1rem #27ae60;
+  -webkit-transition: border 0.1s;
+  transition: border 0.1s;
 }
 
 .card button button:hover, .card button button:active {
@@ -132,18 +132,18 @@ html li {
 
 .tutorial button {
   position: relative;
-  padding: 10px 40px;
-  margin: 0px 10px 10px 0px;
-  border-radius: 3px;
-  font-size: 20px;
+  padding: 0.6rem 1.5rem;
+  margin: 0rem 0.7rem 0.7rem 0rem;
+  border-radius: 0.3rem;
+  font-size: 1rem;
   color: #FFF;
   text-decoration: none;
   background-color: #2ecc71;
   border: none;
-  border-bottom: 5px solid #27ae60;
-  text-shadow: 0px -2px #27ae60;
-  -webkit-transition: all 0.1s;
-  transition: all 0.1s;
+  border-bottom: 0.3rem solid #27ae60;
+  text-shadow: 0px -0.1rem #27ae60;
+  -webkit-transition: border 0.1s;
+  transition: border 0.1s;
 }
 
 .tutorial button button:hover, .tutorial button button:active {
@@ -160,7 +160,20 @@ html li {
           transform: translate(-50%, -50%);
   background-color: #323639;
   width: 70%;
-  height: 90%;
+  height: 48rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .game__wrapper .game__wrapper--header {
@@ -188,18 +201,18 @@ html li {
 
 .game__wrapper .game__wrapper--header div:first-child button {
   position: relative;
-  padding: 10px 40px;
-  margin: 0px 10px 10px 0px;
-  border-radius: 3px;
-  font-size: 20px;
+  padding: 0.6rem 1.5rem;
+  margin: 0rem 0.7rem 0.7rem 0rem;
+  border-radius: 0.3rem;
+  font-size: 1rem;
   color: #FFF;
   text-decoration: none;
   background-color: #2ecc71;
   border: none;
-  border-bottom: 5px solid #27ae60;
-  text-shadow: 0px -2px #27ae60;
-  -webkit-transition: all 0.1s;
-  transition: all 0.1s;
+  border-bottom: 0.3rem solid #27ae60;
+  text-shadow: 0px -0.1rem #27ae60;
+  -webkit-transition: border 0.1s;
+  transition: border 0.1s;
 }
 
 .game__wrapper .game__wrapper--header div:first-child button button:hover, .game__wrapper .game__wrapper--header div:first-child button button:active {
@@ -244,12 +257,14 @@ html li {
 }
 
 #gamebody {
-  width: 100%;
-  height: 80%;
-  background-color: gray;
+  background-color: #323639;
   display: -ms-grid;
   display: grid;
-  grid-gap: 0.4rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1.5rem;
+  margin: auto;
 }
 
 .box {
@@ -257,6 +272,7 @@ html li {
   width: 100%;
   text-align: center;
   border: 2px solid black;
-  background-color: aqua;
+  background-color: #00a2e2;
+  margin: auto;
 }
 /*# sourceMappingURL=App.css.map */

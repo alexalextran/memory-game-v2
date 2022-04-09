@@ -10,7 +10,7 @@ const Gamebody = (props) => {
  
 
     return (
-        <div id='gamebody' style={{ gridTemplateColumns: `repeat(${props.number}, 1fr)`, gridGap: `${10 / props.number}rem`  }}>
+        <div id='gamebody' style={{ gridTemplateColumns: `repeat(${props.number}, 1fr)`, gridGap: `${4/ props.number}rem`  }}>
             {
                 box.map((element, index) => <Box number={props.number} key={index}/>)
             }

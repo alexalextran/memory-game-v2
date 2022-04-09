@@ -72,7 +72,8 @@ html{
   @include absolutecenter;
   background-color: $darkmode;
   width: 70%;
-  height: 90%;
+  height: 48rem;
+  @include flexCenter(column);
   .game__wrapper--header{
     background-color: $discordblue;
    width: 100%;
@@ -108,11 +109,11 @@ html{
 }
 
 #gamebody{
-  width: 100%;
-  height: 80%;
-  background-color: gray;
+  background-color: $darkmode;
   display: grid;
-  grid-gap: 0.4rem;
+  width: fit-content;
+  padding: 1.5rem;
+  margin: auto;
 }
 
 .box{
@@ -120,5 +121,6 @@ html{
   width: 100%;
   text-align: center;
   border: 2px solid black;
-  background-color: aqua;
+  background-color: $boxColor;
+  margin: auto;
 }
