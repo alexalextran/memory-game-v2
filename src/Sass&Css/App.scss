@@ -9,6 +9,9 @@
 
 html{
   font-size: 1vw;
+  li{
+    list-style: none;
+  }
 }
 
 
@@ -62,4 +65,46 @@ html{
   button{
     @include button;
   }
+}
+
+
+.game__wrapper{
+  @include absolutecenter;
+  background-color: $darkmode;
+  width: 70%;
+  height: 90%;
+  .game__wrapper--header{
+    background-color: $discordblue;
+   width: 100%;
+   @include flexCenter(column);
+   div:first-child{
+    padding-top: 1rem;
+     button{
+       @include button;
+     }
+   }
+   .header__info{
+     width: 100%;
+     padding: 1rem;
+        ul{
+    @include flexCenter(row);
+    width: 100%;
+    li{
+      font-size: 1.5rem;
+      position: relative;
+      text-align: center;
+      width: 25%;
+      
+      span{
+        position: absolute;
+        right: 27% ;
+        color: white;
+      }
+    }
+  }
+   }
+    
+   
+
+}
 }

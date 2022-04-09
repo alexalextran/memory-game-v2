@@ -1,4 +1,3 @@
-/* From cssbuttons.io by @adamgiebl */
 
 $backgroundColor: rgb(20,20,20);
 $card: rgb(30,30,30);
@@ -7,6 +6,8 @@ $star: rgb(210,161,0);
 $red: rgb(229, 9, 20);
 $gray: rgb(77,77,77);
 $background: rgb(230, 230, 230);
+$darkmode: rgb(50,54,57);
+$discordblue: rgb(99,98,203);
 
 @mixin button {
     position: relative;
