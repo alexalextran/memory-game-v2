@@ -19,7 +19,7 @@ const Game = (props) => {
                    </ul>
                  </div>
             </div>
-               <Gamebody />
+               <Gamebody number={props.number}/>
             </div>
         </div>
     );

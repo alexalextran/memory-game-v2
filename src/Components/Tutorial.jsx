@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../Contexts/AuthContext';
 import useToggle from '../CustomHooks/UseToggle';
@@ -19,6 +19,7 @@ const Tutorial = (props) => {
         }
       }
 
+  
 
     return (
         <section className='tutorial'>
@@ -34,6 +35,10 @@ const Tutorial = (props) => {
 
         <div className='tutorial__gif'>
             <img src={frog}></img>
+        </div>
+
+        <div>
+          <input onChange={event => props.setnumber(event.target.value)} placeholder='Enter in your desired number of boxes'></input>
         </div>
 
         <button onClick={() => {props.settutorial(false)}}>

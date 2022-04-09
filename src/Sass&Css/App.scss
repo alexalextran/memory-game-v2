@@ -76,6 +76,7 @@ html{
   .game__wrapper--header{
     background-color: $discordblue;
    width: 100%;
+   height: 20%;
    @include flexCenter(column);
    div:first-child{
     padding-top: 1rem;
@@ -103,8 +104,21 @@ html{
     }
   }
    }
-    
-   
-
 }
+}
+
+#gamebody{
+  width: 100%;
+  height: 80%;
+  background-color: gray;
+  display: grid;
+  grid-gap: 0.4rem;
+}
+
+.box{
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  border: 2px solid black;
+  background-color: aqua;
 }
