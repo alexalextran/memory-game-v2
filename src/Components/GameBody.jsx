@@ -8,6 +8,17 @@ const Gamebody = (props) => {
     var start = props.run
     var selectedBoxes = new Array()
     var boxesRemaining = 0
+
+    const handleClick = (event) =>{
+      if(selectedBoxes.includes(parseInt(event.target.id.slice(4)))){
+        (document.getElementById(`box ${event.target.id.slice(4)}`).style.backgroundColor = "green")
+      }
+ 
+    }
+
+    const test = (test) =>{
+      console.log(test)
+    }
     
   
   while(start != false){
@@ -16,7 +27,7 @@ const Gamebody = (props) => {
 
 
     while(selectedBoxes.length != boxesRemaining){
-        var random = Math.ceil((Math.random()*gridNumber - 1))
+        var random = Math.ceil((Math.random()*gridNumber))
       if (!(selectedBoxes.includes(random))){
          selectedBoxes.push(random)   
       }
@@ -43,7 +54,7 @@ if(selectedBoxes.length != 0){
     return (
         <div id='gamebody' style={{ gridTemplateColumns: `repeat(${props.number}, 1fr)`, gridGap: `${4/ props.number}rem`  }}>
             {
-                box.map((element, index) => <Box number={props.number} key={index} boxnumber={index}/>)
+                box.map((element, index) => <Box number={props.number} key={index} boxnumber={index+1} handleClick={handleClick}/>)
             }
         </div>
     );

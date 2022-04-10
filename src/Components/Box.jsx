@@ -6,7 +6,7 @@ const Box = (props) => {
   
     return (
        
-        <div className='box' id={`box ${props.boxnumber}`} style={{ height: `${30 / props.number}em ` , width: `${30 / props.number}em ` , backgroundColor: `${color}`}} >
+        <div onClick={(event) => props.handleClick(event)} className='box' id={`box ${props.boxnumber}`} style={{ height: `${30 / props.number}em ` , width: `${30 / props.number}em ` , backgroundColor: `${color}`}} >
             
         </div>
     );
