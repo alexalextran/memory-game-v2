@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Box from './Box';
+import ReactDOM from 'react-dom';
 
 const Gamebody = (props) => {
     var gridNumber = parseInt(props.number) * parseInt(props.number)
@@ -15,22 +16,28 @@ const Gamebody = (props) => {
 
 
     while(selectedBoxes.length != boxesRemaining){
-        var random = Math.ceil((Math.random()*gridNumber))
+        var random = Math.ceil((Math.random()*gridNumber - 1))
       if (!(selectedBoxes.includes(random))){
          selectedBoxes.push(random)   
       }
     }
 
-   
+    
     
 
-    if(boxesRemaining == gridNumber){
+    if(boxesRemaining == 4 /*gridNumber*/){
         start = false
         console.log(selectedBoxes)
     }
+if(selectedBoxes.length != 0){
+  selectedBoxes.forEach(box => ReactDOM.findDOMNode(document.getElementById(`box ${box}`)).style.animationName = "selected")
+} 
+   
   }
 
-  console.log("finished")
+ 
+
+
  
 
     return (

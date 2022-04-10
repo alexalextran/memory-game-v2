@@ -274,5 +274,27 @@ html li {
   border: 2px solid black;
   background-color: #00a2e2;
   margin: auto;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+  -webkit-animation: linear 2s ease-in;
+          animation: linear 2s ease-in;
+}
+
+@-webkit-keyframes selected {
+  50% {
+    background-color: white;
+  }
+  100% {
+    background-color: #00a2e2;
+  }
+}
+
+@keyframes selected {
+  50% {
+    background-color: white;
+  }
+  100% {
+    background-color: #00a2e2;
+  }
 }
 /*# sourceMappingURL=App.css.map */
