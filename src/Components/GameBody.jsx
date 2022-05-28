@@ -24,17 +24,12 @@ const Gamebody = (props) => {
   while(start != false){
     boxesRemaining++
 
-
-
     while(selectedBoxes.length != boxesRemaining){
         var random = Math.ceil((Math.random()*gridNumber))
       if (!(selectedBoxes.includes(random))){
          selectedBoxes.push(random)   
       }
     }
-
-    
-    
 
     if(boxesRemaining == 4 /*gridNumber*/){
         start = false
