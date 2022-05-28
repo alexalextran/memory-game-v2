@@ -1,28 +1,54 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Box from './Box';
 import ReactDOM from 'react-dom';
 
 const Gamebody = (props) => {
+  const [boxesRemaining, setboxesRemaining] = useState(1)
+
+  useEffect(() => {
+    startGame()
+   
+    return() => {
+      Array.from(document.getElementsByClassName("box")).forEach(box => {
+        box.style.backgroundColor = "rgb(0,162,226)"
+        box.style.animationName = "none"
+      })
+        
+    }
+    
+  }, [boxesRemaining])
+
+  
+  
+
+
     var gridNumber = parseInt(props.number) * parseInt(props.number)
     var box = new Array(gridNumber).fill(0);
-    var start = props.run
+   
     var selectedBoxes = new Array()
-    var boxesRemaining = 0
+    
 
     const handleClick = (event) =>{
       if(selectedBoxes.includes(parseInt(event.target.id.slice(4)))){
         (document.getElementById(`box ${event.target.id.slice(4)}`).style.backgroundColor = "green")
+
+        var index = selectedBoxes.findIndex(selectedBox => selectedBox == (parseInt(event.target.id.slice(4))));
+        selectedBoxes.splice(index, 1);
       }
+
+        if(selectedBoxes.length == 0){
+          setTimeout(() => {
+            setboxesRemaining(boxesRemaining + 1)
+          }, "2000")
+      
+         }
  
     }
 
-    const test = (test) =>{
-      console.log(test)
-    }
-    
+ 
   
-  while(start != false){
-    boxesRemaining++
+  function startGame(){
+    
 
     while(selectedBoxes.length != boxesRemaining){
         var random = Math.ceil((Math.random()*gridNumber))
@@ -31,17 +57,20 @@ const Gamebody = (props) => {
       }
     }
 
-    if(boxesRemaining == 4 /*gridNumber*/){
-        start = false
-        console.log(selectedBoxes)
-    }
+    
+    console.log(selectedBoxes)
+
+
 if(selectedBoxes.length != 0){
-  selectedBoxes.forEach(box => ReactDOM.findDOMNode(document.getElementById(`box ${box}`)).style.animationName = "selected")
-} 
-   
+  setTimeout(() => {
+    selectedBoxes.forEach(box => ReactDOM.findDOMNode(document.getElementById(`box ${box}`)).style.animationName = "selected")
+  }, "2000")
+  
+}   
   }
 
- 
+
+  
 
 
  
