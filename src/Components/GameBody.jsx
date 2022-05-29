@@ -4,8 +4,10 @@ import ReactDOM from 'react-dom';
 
 const Gamebody = (props) => {
   const [boxesRemaining, setboxesRemaining] = useState(1)
+  var stopfunction = true;
 
   useEffect(() => {
+    clickable(false);
     startGame()
    
     return() => {
@@ -28,19 +30,31 @@ const Gamebody = (props) => {
     var selectedBoxes = new Array()
     
 
-    const handleClick = (event) =>{
-      if(selectedBoxes.includes(parseInt(event.target.id.slice(4)))){
-        (document.getElementById(`box ${event.target.id.slice(4)}`).style.backgroundColor = "green")
+    function handleClick (event){
 
-        var index = selectedBoxes.findIndex(selectedBox => selectedBox == (parseInt(event.target.id.slice(4))));
+      //disable onclick if the boxes are still playing selected animation
+     
+      if(selectedBoxes.includes(parseInt(event.target.id.slice(4)))){
+        (document.getElementById(`box ${event.target.id.slice(4)}`).style.pointerEvents = "none");
+        (document.getElementById(`box ${event.target.id.slice(4)}`).style.backgroundColor = "green")
+      
+
+        var index = selectedBoxes.findIndex(selectedBox => selectedBox === (parseInt(event.target.id.slice(4))));
         selectedBoxes.splice(index, 1);
       }
+      else{
+        (document.getElementById(`box ${event.target.id.slice(4)}`).style.backgroundColor = "red")
+      }
 
-        if(selectedBoxes.length == 0){
+        if(selectedBoxes.length === 0){
+
+          clickable(false);
+
           setTimeout(() => {
             setboxesRemaining(boxesRemaining + 1)
-          }, "2000")
-      
+          }, "1000")
+
+         
          }
  
     }
@@ -48,28 +62,61 @@ const Gamebody = (props) => {
  
   
   function startGame(){
-    
 
-    while(selectedBoxes.length != boxesRemaining){
+
+
+    
+//chosen all boxes and ensure that are chosen boxes are unique 
+    while(selectedBoxes.length !== boxesRemaining){
+      if(selectedBoxes.length === gridNumber){
+        props.setrun(false)
+        console.log("game over u won")
+        return
+      }
         var random = Math.ceil((Math.random()*gridNumber))
+        //only includes box if not already chosen
       if (!(selectedBoxes.includes(random))){
          selectedBoxes.push(random)   
       }
     }
 
-    
-    console.log(selectedBoxes)
 
-
-if(selectedBoxes.length != 0){
-  setTimeout(() => {
+  //gives time for previous boxes to reset anmations and plays the selected animation for all chosen boxes after one second
+ setTimeout(() => {
     selectedBoxes.forEach(box => ReactDOM.findDOMNode(document.getElementById(`box ${box}`)).style.animationName = "selected")
-  }, "2000")
+  }, "1000")
+
+  //executes after selected animation plays
+  setTimeout(() => {
+
+    //allows users to click 
+    clickable(true);
+   
+
+    
+  }, "2500")
+
   
-}   
+
+  
+
   }
 
+function clickable(click){
+  if(click === true){
+    Array.from(document.getElementsByClassName("box")).forEach(box => {
+      box.style.pointerEvents = "all"
+      box.style.cursor = "pointer"
+    })
+  } else{
+    Array.from(document.getElementsByClassName("box")).forEach(box => {
+    box.style.cursor = "auto"
+    box.style.pointerEvents = "none"
+  })
 
+  }
+  
+}
   
 
 

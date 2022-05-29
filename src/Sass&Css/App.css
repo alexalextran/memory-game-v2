@@ -276,8 +276,8 @@ html li {
   margin: auto;
   -webkit-transition: all 500ms;
   transition: all 500ms;
-  -webkit-animation: linear 2s ease-in;
-          animation: linear 2s ease-in;
+  -webkit-animation: linear 1.5s ease-in;
+          animation: linear 1.5s ease-in;
 }
 
 @-webkit-keyframes selected {
