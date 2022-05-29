@@ -7,10 +7,12 @@ const Gamebody = (props) => {
   var stopfunction = true;
 
   useEffect(() => {
+    //when new level is started, remove clickability and execute startgame function
     clickable(false);
     startGame()
    
     return() => {
+      //when level finished reset all bg's and animations
       Array.from(document.getElementsByClassName("box")).forEach(box => {
         box.style.backgroundColor = "rgb(0,162,226)"
         box.style.animationName = "none"
@@ -18,6 +20,7 @@ const Gamebody = (props) => {
         
     }
     
+    //update vitrual dom (start new level) when boxesRemaning is changed 
   }, [boxesRemaining])
 
   
@@ -29,27 +32,29 @@ const Gamebody = (props) => {
    
     var selectedBoxes = new Array()
     
-
+  //onclick for each box
     function handleClick (event){
 
-      //disable onclick if the boxes are still playing selected animation
-     
+    
+      //check if box is correct
       if(selectedBoxes.includes(parseInt(event.target.id.slice(4)))){
+
+        //disables clicability if box is chosen and changes bg to green if correct box
         (document.getElementById(`box ${event.target.id.slice(4)}`).style.pointerEvents = "none");
         (document.getElementById(`box ${event.target.id.slice(4)}`).style.backgroundColor = "green")
       
-
+        // find the index of the click box and remove it from the array
         var index = selectedBoxes.findIndex(selectedBox => selectedBox === (parseInt(event.target.id.slice(4))));
         selectedBoxes.splice(index, 1);
       }
       else{
+        // if box is not correct, change bg to red
         (document.getElementById(`box ${event.target.id.slice(4)}`).style.backgroundColor = "red")
       }
-
+        //if all boxes chosen remove clickability and increment chosen boxes by one (increase level by one)
         if(selectedBoxes.length === 0){
-
           clickable(false);
-
+          //gives time for boxes to clear
           setTimeout(() => {
             setboxesRemaining(boxesRemaining + 1)
           }, "1000")
@@ -62,18 +67,18 @@ const Gamebody = (props) => {
  
   
   function startGame(){
-
-
-
-    
 //chosen all boxes and ensure that are chosen boxes are unique 
     while(selectedBoxes.length !== boxesRemaining){
+
+      //check if max number of boxes reached (win condition)
       if(selectedBoxes.length === gridNumber){
         props.setrun(false)
         console.log("game over u won")
         return
       }
+
         var random = Math.ceil((Math.random()*gridNumber))
+
         //only includes box if not already chosen
       if (!(selectedBoxes.includes(random))){
          selectedBoxes.push(random)   
@@ -88,20 +93,13 @@ const Gamebody = (props) => {
 
   //executes after selected animation plays
   setTimeout(() => {
-
-    //allows users to click 
     clickable(true);
-   
-
-    
   }, "2500")
-
-  
-
-  
 
   }
 
+
+//either allows users to click or not to click
 function clickable(click){
   if(click === true){
     Array.from(document.getElementsByClassName("box")).forEach(box => {
