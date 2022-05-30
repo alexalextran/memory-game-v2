@@ -5,11 +5,12 @@ import GameOver from './GameOver';
 const Game = (props) => {
     const [boxesRemaining, setboxesRemaining] = useState(1)
     const [gameOver, setGameOver] = useState(false)
+    const [highscore, setHighScore] = useState({})
    
     return (
         gameOver ?
         
-        <GameOver />
+        <GameOver highscore={highscore}/>
         :
         <div>
             <div className='game__wrapper'>
@@ -26,7 +27,7 @@ const Game = (props) => {
                    </ul>
                  </div>
             </div>
-               <Gamebody number={props.number} boxesRemaining={boxesRemaining} setboxesRemaining={setboxesRemaining} setGameOver={setGameOver}/>
+               <Gamebody number={props.number} boxesRemaining={boxesRemaining} setboxesRemaining={setboxesRemaining} setGameOver={setGameOver} setHighScore={setHighScore}/>
             </div>
         </div>
        

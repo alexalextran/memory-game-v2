@@ -57,6 +57,10 @@ const Gamebody = (props) => {
         lives--
        
         if(lives === 0){
+          props.setHighScore({
+            level: `${props.boxesRemaining}`,
+            time: `${200}`
+          })
           props.setboxesRemaining(15);
           
         }
@@ -80,7 +84,7 @@ const Gamebody = (props) => {
 
       //check if max number of boxes reached (win condition)
       if(selectedBoxes.length === gridNumber){
-        
+       
         console.log("game over u won")
         props.setGameOver(true)
         return
