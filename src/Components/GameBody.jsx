@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Box from './Box';
 import ReactDOM from 'react-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 
 const Gamebody = (props) => {
-  const [boxesRemaining, setboxesRemaining] = useState(1)
+  var lives = 3;
   var stopfunction = true;
 
   useEffect(() => {
@@ -21,7 +22,7 @@ const Gamebody = (props) => {
     }
     
     //update vitrual dom (start new level) when boxesRemaning is changed 
-  }, [boxesRemaining])
+  }, [props.boxesRemaining])
 
   
   
@@ -34,7 +35,7 @@ const Gamebody = (props) => {
     
   //onclick for each box
     function handleClick (event){
-
+ 
     
       //check if box is correct
       if(selectedBoxes.includes(parseInt(event.target.id.slice(4)))){
@@ -49,17 +50,24 @@ const Gamebody = (props) => {
       }
       else{
         // if box is not correct, change bg to red
+        (document.getElementById(`box ${event.target.id.slice(4)}`).style.pointerEvents = "none");
         (document.getElementById(`box ${event.target.id.slice(4)}`).style.backgroundColor = "red")
+
+        
+        lives--
+       
+        if(lives === 0){
+          props.setboxesRemaining(15);
+          
+        }
       }
         //if all boxes chosen remove clickability and increment chosen boxes by one (increase level by one)
         if(selectedBoxes.length === 0){
           clickable(false);
           //gives time for boxes to clear
           setTimeout(() => {
-            setboxesRemaining(boxesRemaining + 1)
+            props.setboxesRemaining(props.boxesRemaining + 1)
           }, "1000")
-
-         
          }
  
     }
@@ -68,12 +76,13 @@ const Gamebody = (props) => {
   
   function startGame(){
 //chosen all boxes and ensure that are chosen boxes are unique 
-    while(selectedBoxes.length !== boxesRemaining){
+    while(selectedBoxes.length !== props.boxesRemaining){
 
       //check if max number of boxes reached (win condition)
       if(selectedBoxes.length === gridNumber){
-        props.setrun(false)
+        
         console.log("game over u won")
+        props.setGameOver(true)
         return
       }
 

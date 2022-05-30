@@ -23,10 +23,12 @@ $boxColor: rgb(0,162,226);
     border-bottom: 0.3rem solid #27ae60;
     text-shadow: 0px -0.1rem #27ae60;
     transition: border 0.1s;
+    cursor: pointer;
 
     button:hover, button:active {
         transform: translate(0px,5px);
         border-bottom: 1px solid #2ecc71;
+      
        }
 
    }

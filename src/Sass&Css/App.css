@@ -55,6 +55,7 @@ html li {
   text-shadow: 0px -0.1rem #27ae60;
   -webkit-transition: border 0.1s;
   transition: border 0.1s;
+  cursor: pointer;
 }
 
 .card button button:hover, .card button button:active {
@@ -144,6 +145,7 @@ html li {
   text-shadow: 0px -0.1rem #27ae60;
   -webkit-transition: border 0.1s;
   transition: border 0.1s;
+  cursor: pointer;
 }
 
 .tutorial button button:hover, .tutorial button button:active {
@@ -213,6 +215,7 @@ html li {
   text-shadow: 0px -0.1rem #27ae60;
   -webkit-transition: border 0.1s;
   transition: border 0.1s;
+  cursor: pointer;
 }
 
 .game__wrapper .game__wrapper--header div:first-child button button:hover, .game__wrapper .game__wrapper--header div:first-child button button:active {
@@ -296,5 +299,30 @@ html li {
   100% {
     background-color: #00a2e2;
   }
+}
+
+.gameOver {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #dddddd;
+  height: 15rem;
+  width: 45rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #6362cb;
 }
 /*# sourceMappingURL=App.css.map */

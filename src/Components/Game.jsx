@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
 import Gamebody from './GameBody';
+import GameOver from './GameOver';
 
 const Game = (props) => {
-    const [run, setrun] = useState(false);
+    const [boxesRemaining, setboxesRemaining] = useState(1)
+    const [gameOver, setGameOver] = useState(false)
    
     return (
+        gameOver ?
+        
+        <GameOver />
+        :
         <div>
             <div className='game__wrapper'>
             <div className='game__wrapper--header'>
                  <div>
-                    <button onClick={() => props.settutorial(true)}>Back Home</button> <button onClick={() => setrun(true)}>Start Game</button>
+                    <button onClick={() => props.settutorial(true)}>Back Home</button> <button onClick={() => setboxesRemaining(1)}>Reset Game</button>
                  </div>
                  <div className='header__info'>
                    <ul>
@@ -20,9 +26,10 @@ const Game = (props) => {
                    </ul>
                  </div>
             </div>
-               <Gamebody number={props.number} run={run} setrun={setrun}/>
+               <Gamebody number={props.number} boxesRemaining={boxesRemaining} setboxesRemaining={setboxesRemaining} setGameOver={setGameOver}/>
             </div>
         </div>
+       
     );
 }
 

@@ -14,6 +14,7 @@ function App() {
          
 
           <Route path="/login" exact element={<Loginpage/>} />
+          
 
           <Route exact path="/" element={<PrivateRoute />}>
               <Route exact path="/" element={<Homepage />} />

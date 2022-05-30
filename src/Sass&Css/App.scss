@@ -135,3 +135,12 @@ html{
 background-color:  $boxColor;
   }
 }
+
+.gameOver{
+  @include flexCenter(column);
+  color: $mainTextColor;
+  height: 15rem;
+  width: 45rem;
+  @include absolutecenter;
+  background-color: $discordblue;
+}
