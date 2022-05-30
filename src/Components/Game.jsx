@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Gamebody from './GameBody';
 import GameOver from './GameOver';
 
@@ -6,6 +6,12 @@ const Game = (props) => {
     const [boxesRemaining, setboxesRemaining] = useState(1)
     const [gameOver, setGameOver] = useState(false)
     const [highscore, setHighScore] = useState({})
+    const [remainingBoxes, setremainingBoxes] = useState()
+
+    useEffect(() => {
+     //console.log(document.getElementById('r-b').style.animation);
+    })
+    
    
     return (
         gameOver ?
@@ -20,14 +26,14 @@ const Game = (props) => {
                  </div>
                  <div className='header__info'>
                    <ul>
-                       <li>Level <span>0</span></li>
-                       <li>Boxes <span>3</span></li>
+                       <li>Level <span>{boxesRemaining}</span></li>
+                       <li>Boxes <span id='r-b'>{remainingBoxes}</span></li>
                        <li>Lives <span>0</span></li>
                        <li>Time <span>3</span></li>
                    </ul>
                  </div>
             </div>
-               <Gamebody number={props.number} boxesRemaining={boxesRemaining} setboxesRemaining={setboxesRemaining} setGameOver={setGameOver} setHighScore={setHighScore}/>
+               <Gamebody number={props.number} boxesRemaining={boxesRemaining} setboxesRemaining={setboxesRemaining} setGameOver={setGameOver} setHighScore={setHighScore} setremainingBoxes={setremainingBoxes}/>
             </div>
         </div>
        

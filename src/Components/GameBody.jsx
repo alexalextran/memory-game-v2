@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import Box from './Box';
 import ReactDOM from 'react-dom';
 import { Navigate, Outlet } from 'react-router-dom';
+
 
 const Gamebody = (props) => {
   var lives = 3;
@@ -47,6 +48,7 @@ const Gamebody = (props) => {
         // find the index of the click box and remove it from the array
         var index = selectedBoxes.findIndex(selectedBox => selectedBox === (parseInt(event.target.id.slice(4))));
         selectedBoxes.splice(index, 1);
+        props.setremainingBoxes(selectedBoxes.length)
       }
       else{
         // if box is not correct, change bg to red
@@ -98,6 +100,7 @@ const Gamebody = (props) => {
       }
     }
 
+    props.setremainingBoxes(selectedBoxes.length)
 
   //gives time for previous boxes to reset anmations and plays the selected animation for all chosen boxes after one second
  setTimeout(() => {
@@ -143,4 +146,4 @@ function clickable(click){
     
 }
 
-export default Gamebody;
+export default React.memo(Gamebody);

@@ -325,4 +325,35 @@ html li {
           transform: translate(-50%, -50%);
   background-color: #6362cb;
 }
+
+#r-b {
+  -webkit-animation: fade 1s linear;
+          animation: fade 1s linear;
+}
+
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0.4;
+    -webkit-transform: translateY(-1.5rem);
+            transform: translateY(-1.5rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.4;
+    -webkit-transform: translateY(-1.5rem);
+            transform: translateY(-1.5rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
 /*# sourceMappingURL=App.css.map */
