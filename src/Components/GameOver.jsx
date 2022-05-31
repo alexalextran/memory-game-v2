@@ -9,14 +9,17 @@ const GameOver = (props) => {
    const [loading, setLoading] = useState(true)
    const [newScore, setnewScore] = useState(false)
    const [disable, setDisable] = useState(false)
-   
+   const [highestLevel, sethighestLevel] = useState(0)
+   const [hlTime, sethlTime] = useState(0)
+  
  //get firestore document
 
    getDoc(docRef)
     .then((snapshot) => {
         if (snapshot.exists()) {
-            console.log(snapshot.data().Level)
-   
+            sethighestLevel(snapshot.data().Level)
+            sethlTime(snapshot.data().Time)
+    
             if (snapshot.data().Level < props.highscore.level) {
                 setnewScore(true) 
             } 
@@ -58,7 +61,7 @@ const GameOver = (props) => {
                     }}>Update</button>    </>
                  :
                  <>
-                <p>No new highscore</p>
+                <p>Your current highest level is {highestLevel} with a time of {hlTime} seconds</p>
                 </>
                    
 
