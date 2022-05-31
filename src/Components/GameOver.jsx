@@ -8,15 +8,21 @@ const GameOver = (props) => {
    const docRef = doc(db, `users`, `${currentUser.uid}`);
    const [loading, setLoading] = useState(true)
    const [newScore, setnewScore] = useState(false)
+   const [disable, setDisable] = useState(false)
    
  //get firestore document
 
    getDoc(docRef)
     .then((snapshot) => {
         if (snapshot.exists()) {
-       console.log(snapshot.data() )
+            console.log(snapshot.data().Level)
+   
+            if (snapshot.data().Level < props.highscore.level) {
+                setnewScore(true) 
+            } 
+       
         } else{
-            setnewScore(true);
+            setnewScore(true)
             console.log("does not exist")
         }
         setLoading(false)
@@ -46,7 +52,10 @@ const GameOver = (props) => {
                 newScore ?
                 <>
                     <p>Woah you got a new highscore! would you like to update your highscore?</p>
-                    <button className='button' onClick={() => addHighScore()}>Update</button>    </>
+                    <button className='button' disabled={disable} onClick={() => {
+                        addHighScore()
+                        setDisable(true)
+                    }}>Update</button>    </>
                  :
                  <>
                 <p>No new highscore</p>

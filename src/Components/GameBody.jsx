@@ -59,17 +59,24 @@ const Gamebody = (props) => {
         lives--
        
         if(lives === 0){
-          props.setHighScore({
-            level: `${props.boxesRemaining}`,
-            time: `${200}`
-          })
-          props.setboxesRemaining(15);
+          endGame()
+         
           
         }
       }
+
+   
+
         //if all boxes chosen remove clickability and increment chosen boxes by one (increase level by one)
         if(selectedBoxes.length === 0){
           clickable(false);
+
+    //check if max number of boxes reached (win condition)
+    if(props.boxesRemaining === gridNumber){
+      endGame()
+      
+    }
+
           //gives time for boxes to clear
           setTimeout(() => {
             props.setboxesRemaining(props.boxesRemaining + 1)
@@ -81,17 +88,9 @@ const Gamebody = (props) => {
  
   
   function startGame(){
+    console.log(selectedBoxes.length, props.boxesRemaining)
 //chosen all boxes and ensure that are chosen boxes are unique 
     while(selectedBoxes.length !== props.boxesRemaining){
-
-      //check if max number of boxes reached (win condition)
-      if(selectedBoxes.length === gridNumber){
-       
-        console.log("game over u won")
-        props.setGameOver(true)
-        return
-      }
-
         var random = Math.ceil((Math.random()*gridNumber))
 
         //only includes box if not already chosen
@@ -130,6 +129,15 @@ function clickable(click){
 
   }
   
+}
+
+function endGame(){
+  props.setHighScore({
+    level: `${props.boxesRemaining}`,
+    time: `${200}`
+    
+  })
+  props.setGameOver(true)
 }
   
 
