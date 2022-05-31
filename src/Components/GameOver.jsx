@@ -28,7 +28,6 @@ const GameOver = (props) => {
        
         } else{
             setnewScore(true)
-            console.log("does not exist")
         }
         setLoading(false)
     })

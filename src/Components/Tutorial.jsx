@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../Contexts/AuthContext';
 import useToggle from '../CustomHooks/UseToggle';
 import frog from '../assets/frog.png'
+import { Link} from 'react-router-dom';
 
 const Tutorial = (props) => {
 
@@ -41,10 +42,13 @@ const Tutorial = (props) => {
           <input onChange={event => props.setnumber(event.target.value)} placeholder='Enter in your desired number of boxes'></input>
         </div>
 
+      
+
         <button onClick={() => {props.settutorial(false)}}>
             I know how to play
         </button>
 
+       <Link to="/leaderBoard" className="button">LeaderBoard</Link>
 
       </div>
   </div>

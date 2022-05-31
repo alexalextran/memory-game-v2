@@ -163,3 +163,8 @@ background-color:  $boxColor;
     transform: translateY(0);
   }
 }
+
+.leaderboard{
+  @include absolutecenter;
+  @include flexCenter(column);
+}
