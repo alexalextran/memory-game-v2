@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { useAuth } from '../Contexts/AuthContext';
@@ -7,6 +7,10 @@ const Loginpage = () => {
     const { signInWithGoogle, currentUser } = useAuth()
     const [loading, setloading] = useState(false);
     const navigate = useNavigate()
+
+    useEffect(() => {   
+    }, [currentUser])
+    
 
     async function GoogleLogIn(e){
         e.preventDefault()
