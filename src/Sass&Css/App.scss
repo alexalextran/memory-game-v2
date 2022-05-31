@@ -14,6 +14,9 @@ html{
   }
 }
 
+.button{
+  @include button;
+}
 
 
 .card{
