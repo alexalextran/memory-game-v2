@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../Contexts/AuthContext';
 import { collection, doc, getDoc, getDocs, getFirestore, setDoc } from 'firebase/firestore/lite';
+import { Link} from 'react-router-dom';
 
 const GameOver = (props) => {
    const { currentUser } = useAuth()
@@ -13,6 +14,7 @@ const GameOver = (props) => {
    const [hlTime, sethlTime] = useState(0)
   
  //get firestore document
+
 
    getDoc(docRef)
     .then((snapshot) => {
@@ -34,7 +36,9 @@ const GameOver = (props) => {
     function addHighScore(){
         setDoc(doc(db, "users", `${currentUser.uid}`),{
             Level: props.highscore.level,
-            Time: props.highscore.time
+            Time: props.highscore.time,
+            Name: currentUser.displayName,
+            ProfilePic: currentUser.photoURL
         })
         console.log("highscore added")
     }
@@ -51,19 +55,22 @@ const GameOver = (props) => {
         <div className='gameOver'>
             <h1>Game Over</h1>
             <p>Nice Job, you got up to level {props.highscore.level} with a time of {props.highscore.time} seconds</p>
+            <Link to="/leaderBoard" className="button">LeaderBoard</Link>
             {
                 newScore ?
-                <>
+                <div>
                     <p>Woah you got a new highscore! would you like to update your highscore?</p>
                     <button className='button' disabled={disable} onClick={() => {
                         addHighScore()
                         setDisable(true)
-                    }}>Update</button>    </>
+                    }}>Update</button>    </div>
                  :
                  <>
+                 <br></br>
+                 <div>
                 <p>Your current highest level is {highestLevel} with a time of {hlTime} seconds</p>
-                </>
-                   
+                </div>
+                   </>
 
             }
 

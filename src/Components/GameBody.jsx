@@ -76,7 +76,6 @@ const Gamebody = (props) => {
   }
 
   function startGame() {
-    console.log(selectedBoxes.length, props.boxesRemaining);
     //chosen all boxes and ensure that are chosen boxes are unique
     while (selectedBoxes.length !== props.boxesRemaining) {
       var random = Math.ceil(Math.random() * gridNumber);
