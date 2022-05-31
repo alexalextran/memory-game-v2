@@ -400,4 +400,24 @@ html li {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+
+.leaderboard__position {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.leaderboard__position p {
+  padding: 0 0.5rem;
+}
 /*# sourceMappingURL=App.css.map */

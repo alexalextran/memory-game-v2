@@ -48,7 +48,9 @@ const LeaderBoard = () => {
             <div>
             {sortedUserScores.map((user, index) => (
         <LeaderBoardPosition
+          key={index}
           position= {index}
+          name={user.Name}
           level = {user.Level}
           time = {user.Time}
         />
