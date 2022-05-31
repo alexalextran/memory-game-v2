@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuth } from '../Contexts/AuthContext';
 import { collection, doc, getDoc, getDocs, getFirestore, setDoc } from 'firebase/firestore/lite';
 import { Link} from 'react-router-dom';
@@ -15,8 +15,8 @@ const GameOver = (props) => {
   
  //get firestore document
 
-
-   getDoc(docRef)
+ useEffect(() => {
+    getDoc(docRef)
     .then((snapshot) => {
         if (snapshot.exists()) {
             sethighestLevel(snapshot.data().Level)
@@ -31,6 +31,11 @@ const GameOver = (props) => {
         }
         setLoading(false)
     })
+    console.log("api called")
+ }, []);
+
+
+  
     
     function addHighScore(){
         setDoc(doc(db, "users", `${currentUser.uid}`),{
@@ -42,6 +47,7 @@ const GameOver = (props) => {
         console.log("highscore added")
     }
 
+   
 
     return (
         <>
