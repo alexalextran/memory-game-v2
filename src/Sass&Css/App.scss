@@ -182,7 +182,7 @@ background-color:  $boxColor;
     font-size: 1.5rem;
     border: 2px solid white;
     position: absolute;
-    top: 1.6rem;
+    top: 5.5%;
     z-index: 100;
     padding:  0.5rem 2rem;
     background-color: $spotifyGreen;
@@ -204,7 +204,8 @@ background-color:  $boxColor;
   @include flexCenter(column);
 
   .leaderboard__position:first-child{
-    margin-top: 8rem;
+    
+    margin-top: clamp(0rem, 20%, 40%);
   }
  
 }
