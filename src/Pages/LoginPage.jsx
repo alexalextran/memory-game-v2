@@ -35,6 +35,7 @@ const Loginpage = () => {
             <h2>Memory Game V2</h2>
             <p>Since V2 of MG uses a leaderboard, please feel free to login using google authentication, or login as a <a>guest</a> alternatively</p>
             <button disabled={loading} onClick={GoogleLogIn}>Log In</button>
+            <Link to="/leaderBoard" className="button">LeaderBoard</Link>
         </div>
         
    

@@ -9,7 +9,7 @@ $background: rgb(230, 230, 230);
 $darkmode: rgb(50,54,57);
 $discordblue: rgb(99,98,203);
 $boxColor: rgb(0,162,226);
-
+$spotifyGreen: #2ecc71;
 @mixin button {
     position: relative;
     padding: 0.6rem 1.5rem;
@@ -88,20 +88,22 @@ $boxColor: rgb(0,162,226);
 @mixin scrollbar{
     
  &::-webkit-scrollbar-track
- {
-     box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-     background-color: black;
+ {  
+    border-radius: 0 2rem 2rem 0;  
+     background-color: white;
  }
  
  &::-webkit-scrollbar
- {
-     width: 10px;
-     background-color: black;
+ {  
+    border-radius: 0 2rem 2rem 0;  
+     width: 0.45rem;
+     background-color: white;
  }
  
  &::-webkit-scrollbar-thumb
- {
-     background-color: #ff0101;
-     border: 2px solid #ff0101;
+ {  
+    border-radius: 0 2rem 2rem 0;   
+     background-color: $spotifyGreen;
+    
  }
 }

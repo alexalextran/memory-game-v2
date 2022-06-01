@@ -23,7 +23,7 @@ const LeaderBoard = () => {
                 })
             })
          
-            setsortedUserScores(userScores.sort((a, b) => (parseInt(a.Level) < parseInt(b.Level)) ? 1 : (a.color === b.color) ? ((parseInt(a.Time) > parseInt(b.Time)) ? 1 : -1) : -1 ))
+            setsortedUserScores(userScores.sort((a, b) => (parseInt(a.Level) < parseInt(b.Level)) ? 1 : (a.Level === b.Level) ? ((parseInt(a.Time) > parseInt(b.Time)) ? 1 : -1) : -1 ))
            
             })
             .catch(err => {
@@ -36,29 +36,36 @@ const LeaderBoard = () => {
     
 
        
-        
+        console.log(sortedUserScores)
      
     
     
  
     return (
-        <>
+        <div className='leaderboard__wrapper'>
+               <span className='leaderboard__title'>LeaderBoard</span>
         <div className='leaderboard'>
-            leaderboard
-            <div>
+          
+
+           
+         
+          
             {sortedUserScores.map((user, index) => (
         <LeaderBoardPosition
           key={index}
           position= {index}
+          image = {user.ProfilePic}
           name={user.Name}
           level = {user.Level}
           time = {user.Time}
         />
       ))}
-            </div>
+           
             <Link to="/" className="button">Back Home</Link>
+        
         </div>
-        </>
+        </div>
+       
             
     );
 }
