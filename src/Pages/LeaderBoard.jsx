@@ -2,15 +2,16 @@ import { collection, getDocs, getFirestore, setLogLevel } from 'firebase/firesto
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import LeaderBoardPosition from '../Components/LeaderBoardPosition';
+import Loading from '../Components/Loading';
 
 
 
 const LeaderBoard = () => {
     const db = getFirestore()
     const colRef = collection(db, 'users')
-   
     const [sortedUserScores, setsortedUserScores] = useState([])
     var userScores = []
+    const [loading, setloading] = useState(true)
   
 
     useEffect(() => {
@@ -24,7 +25,7 @@ const LeaderBoard = () => {
             })
          
             setsortedUserScores(userScores.sort((a, b) => (parseInt(a.Level) < parseInt(b.Level)) ? 1 : (a.Level === b.Level) ? ((parseInt(a.Time) > parseInt(b.Time)) ? 1 : -1) : -1 ))
-           
+            setloading(false)
             })
             .catch(err => {
                 console.log(err.message)
@@ -42,6 +43,12 @@ const LeaderBoard = () => {
     
  
     return (
+        <>
+        {
+            loading ? 
+            <Loading />
+            :
+   
         <div className='leaderboard__wrapper'>
                <span className='leaderboard__title'>LeaderBoard</span>
         <div className='leaderboard'>
@@ -65,8 +72,8 @@ const LeaderBoard = () => {
         
         </div>
         </div>
-       
-            
+        }
+        </>
     );
 }
 

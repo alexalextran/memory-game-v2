@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuth } from '../Contexts/AuthContext';
 import { collection, doc, getDoc, getDocs, getFirestore, setDoc } from 'firebase/firestore/lite';
 import { Link} from 'react-router-dom';
+import Loading from './Loading';
 
 const GameOver = (props) => {
    const { currentUser } = useAuth()
@@ -23,6 +24,7 @@ const GameOver = (props) => {
             sethlTime(snapshot.data().Time)
     
             if (snapshot.data().Level < props.highscore.level) {
+                addHighScore()
                 setnewScore(true) 
             } 
        
@@ -32,6 +34,8 @@ const GameOver = (props) => {
         setLoading(false)
     })
     console.log("api called")
+
+   
  }, []);
 
 
@@ -53,9 +57,7 @@ const GameOver = (props) => {
         <>
         {
             loading ?
-            <div>
-                loading
-            </div>
+           <Loading />
             :
         <div className='gameOver'>
             <h1>Game Over</h1>
@@ -64,11 +66,9 @@ const GameOver = (props) => {
             {
                 newScore ?
                 <div>
-                    <p>Woah you got a new highscore! would you like to update your highscore?</p>
-                    <button className='button' disabled={disable} onClick={() => {
-                        addHighScore()
-                        setDisable(true)
-                    }}>Update</button>    </div>
+                    <p>Woah you got a new highscore</p>
+                    <p>Your highscore has been updated</p>
+                      </div>
                  :
                  <>
                  <br></br>

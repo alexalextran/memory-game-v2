@@ -241,3 +241,26 @@ background-color:  $boxColor;
   @include flexCenter(row);
   justify-content: space-around;
 }
+
+.loadingAnimation{
+  @include absolutecenter;
+  @include flexCenter(column);
+img{
+  animation: loadingAnimation 3s infinite;
+  width: 16rem;
+}
+h2{
+  color: $spotifyGreen;
+  margin-top: 2rem;
+}
+}
+
+@keyframes loadingAnimation {
+  0%{
+  transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+  
+}
