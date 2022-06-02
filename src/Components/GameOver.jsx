@@ -27,8 +27,7 @@ const GameOver = (props) => {
      
 
             if (parseInt(snapshot.data().Level) < parseInt(props.highscore.level)) {
-                console.log(snapshot.data().Level)
-                console.log(props.highscore.level)
+              
 
                 addHighScore()
                 setnewScore(true) 
@@ -79,9 +78,7 @@ const GameOver = (props) => {
                  <>
                  <br></br>
                  <div>
-                     <button onClick={()=> addHighScore()}>
-                         add
-                     </button>
+                 
                 <p>Your current highest level is {highestLevel} with a time of {hlTime} seconds</p>
                 </div>
                    </>
