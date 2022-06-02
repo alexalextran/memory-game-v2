@@ -357,6 +357,21 @@ html li {
   background-color: #6362cb;
 }
 
+.gameOver .gameover__title {
+  font-size: 1.5rem;
+  border: 2px solid white;
+  position: absolute;
+  top: 5.5%;
+  z-index: 100;
+  padding: 0.5rem 2rem;
+  background-color: #2ecc71;
+  color: white;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0 10px 10px -2px #323639;
+          box-shadow: 0 10px 10px -2px #323639;
+  top: -5%;
+}
+
 #r-b {
   -webkit-animation: fade 1s linear;
           animation: fade 1s linear;

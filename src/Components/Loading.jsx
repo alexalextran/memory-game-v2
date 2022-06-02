@@ -4,7 +4,7 @@ const Loading = () => {
     return (
         <div className='loadingAnimation'>
             <img src={punpun}></img>
-            <h2>Loading</h2>
+            <h2>Loading...</h2>
         </div>
     );
 }

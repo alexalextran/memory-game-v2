@@ -24,7 +24,7 @@ const LeaderBoard = () => {
                 })
             })
          
-            setsortedUserScores(userScores.sort((a, b) => (parseInt(a.Level) < parseInt(b.Level)) ? 1 : (a.Level === b.Level) ? ((parseInt(a.Time) > parseInt(b.Time)) ? 1 : -1) : -1 ))
+            setsortedUserScores(userScores.sort((a, b) => (parseInt(a.Level) < parseInt(b.Level)) ? 1 : (parseInt(a.Level) === parseInt(b.Level)) ? ((parseInt(a.Time) > parseInt(b.Time)) ? 1 : -1) : -1 ))
             setloading(false)
             })
             .catch(err => {

@@ -22,8 +22,14 @@ const GameOver = (props) => {
         if (snapshot.exists()) {
             sethighestLevel(snapshot.data().Level)
             sethlTime(snapshot.data().Time)
-    
-            if (snapshot.data().Level < props.highscore.level) {
+        ////
+
+     
+
+            if (parseInt(snapshot.data().Level) < parseInt(props.highscore.level)) {
+                console.log(snapshot.data().Level)
+                console.log(props.highscore.level)
+
                 addHighScore()
                 setnewScore(true) 
             } 
@@ -33,7 +39,7 @@ const GameOver = (props) => {
         }
         setLoading(false)
     })
-    console.log("api called")
+ 
 
    
  }, []);
@@ -60,7 +66,7 @@ const GameOver = (props) => {
            <Loading />
             :
         <div className='gameOver'>
-            <h1>Game Over</h1>
+            <span className='gameover__title'>Game Over</span>
             <p>Nice Job, you got up to level {props.highscore.level} with a time of {props.highscore.time} seconds</p>
             <Link to="/leaderBoard" className="button">LeaderBoard</Link>
             {
@@ -73,6 +79,9 @@ const GameOver = (props) => {
                  <>
                  <br></br>
                  <div>
+                     <button onClick={()=> addHighScore()}>
+                         add
+                     </button>
                 <p>Your current highest level is {highestLevel} with a time of {hlTime} seconds</p>
                 </div>
                    </>
