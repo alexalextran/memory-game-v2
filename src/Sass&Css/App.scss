@@ -108,12 +108,17 @@ html{
       text-align: center;
       width: 25%;
       
-      span{
+      span, div{
+        padding: 0;
         background-color: inherit;
         position: absolute;
         right: 27% ;
         color: white;
       }
+      #r-b{
+        bottom: 0rem;
+      }
+      
     }
   }
    }
@@ -161,9 +166,9 @@ background-color:  $boxColor;
   }
 }
 
-#r-b{
- animation: fade 1s linear;
-}
+// #r-b{
+//  animation: fade 1s linear;
+// }
 
 
 @keyframes fade {

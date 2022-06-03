@@ -283,11 +283,16 @@ html li {
   width: 25%;
 }
 
-.game__wrapper .game__wrapper--header .header__info ul li span {
+.game__wrapper .game__wrapper--header .header__info ul li span, .game__wrapper .game__wrapper--header .header__info ul li div {
+  padding: 0;
   background-color: inherit;
   position: absolute;
   right: 27%;
   color: white;
+}
+
+.game__wrapper .game__wrapper--header .header__info ul li #r-b {
+  bottom: 0rem;
 }
 
 #gamebody {
@@ -370,11 +375,6 @@ html li {
   -webkit-box-shadow: 0 10px 10px -2px #323639;
           box-shadow: 0 10px 10px -2px #323639;
   top: -5%;
-}
-
-#r-b {
-  -webkit-animation: fade 1s linear;
-          animation: fade 1s linear;
 }
 
 @-webkit-keyframes fade {

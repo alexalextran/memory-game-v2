@@ -1,20 +1,17 @@
 import React, { useEffect } from 'react';
 import GameBody from './GameBody';
 import ReactDOM from "react-dom";
+import { useTransition, animated } from 'react-spring';
 
 
 const GameWrapper = (props) => {
+    const transition = useTransition(props.remainingBoxes, {
+        from:{x: 0, y: 10, opacity: 0},
+        enter:{x: 0, y: 0, opacity: 1},
+        laeve:{x: 0, y: -10, opacity: 0},
+    })
 
-    useEffect(() => {
-     
-
-     
-        return () => {
-       
-           
-        };
-      
-    }, [props.boxesRemaining]);
+ 
     return (
         <div>
             <div className='game__wrapper'>
@@ -25,7 +22,16 @@ const GameWrapper = (props) => {
                  <div className='header__info'>
                    <ul>
                        <li>Level <span>{props.boxesRemaining}</span></li>
-                       <li>Boxes <span id='r-b'>{props.remainingBoxes}</span></li>
+                       <li>Boxes 
+                           {transition((style, item) =>
+                           
+                           <animated.div style = {style} id="r-b"> 
+                            {props.remainingBoxes}
+                           </animated.div>
+                           
+                           )}
+                         
+                       </li>
                        <li>Lives <span>0</span></li>
                        <li>Time <span>3</span></li>
                    </ul>
