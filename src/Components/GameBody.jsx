@@ -4,11 +4,13 @@ import ReactDOM from "react-dom";
 
 const Gamebody = (props) => {
   var lives = 3;
+  var difficultyscale = 85;
 
   useEffect(() => {
     //when new level is started, remove clickability and execute startgame function
     clickable(false);
     startGame();
+    console.log(1000 + props.boxesRemaining*difficultyscale)
    
  
 
@@ -16,7 +18,7 @@ const Gamebody = (props) => {
       //when level finished reset all bg's and animations
       Array.from(document.getElementsByClassName("box")).forEach((box) => {
         box.style.backgroundColor = "rgb(0,162,226)";
-        box.style.animationName = "none";
+        box.style.animation = "";
       });
     };
 
@@ -57,7 +59,10 @@ const Gamebody = (props) => {
      
       lives--;
      document.getElementsByClassName("heart")[lives].style.fill = "black"
-     document.getElementsByClassName("heart")[lives].style.animationName = "heartloss"
+     document.getElementsByClassName("heart")[lives].style.animation = `heartloss 750ms ease-in`
+     if(lives == 1){
+      document.getElementsByClassName("heart")[0].style.animation = `heartloss 750ms infinite ease-in`
+     }
 
       if (lives === 0) {
         endGame();
@@ -104,14 +109,14 @@ const Gamebody = (props) => {
         (box) =>
           (ReactDOM.findDOMNode(
             document.getElementById(`box ${box}`)
-          ).style.animationName = "selected")
+          ).style.animation = `selected ${1000 + props.boxesRemaining*difficultyscale}ms ease-in`)
       );
-    }, "1000");
+    }, `${1000}`);
 
     //executes after selected animation plays
     setTimeout(() => {
       clickable(true);
-    }, "2500");
+    }, `${2000 +  props.boxesRemaining*difficultyscale}`);
   }
 
   //either allows users to click or not to click

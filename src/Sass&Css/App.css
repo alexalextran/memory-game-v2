@@ -300,11 +300,6 @@ html li {
   padding: 0rem 0.1rem;
 }
 
-.game__wrapper .game__wrapper--header .header__info ul li .heart {
-  -webkit-animation: linear 0.75s ease-in;
-          animation: linear 0.75s ease-in;
-}
-
 @-webkit-keyframes heartloss {
   0% {
     -webkit-transform: translateX(0.1rem);
@@ -419,8 +414,6 @@ html li {
   margin: auto;
   -webkit-transition: background-Color 500ms;
   transition: background-Color 500ms;
-  -webkit-animation: linear 1.5s ease-in;
-          animation: linear 1.5s ease-in;
 }
 
 @-webkit-keyframes selected {

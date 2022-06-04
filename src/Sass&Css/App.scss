@@ -123,9 +123,6 @@ html{
         right: 10%;
   
       }
-      .heart{
-        animation:  linear 0.75s ease-in;
-      } 
     }
   }
 }
@@ -184,7 +181,7 @@ html{
   background-color: $boxColor;
   margin: auto;
   transition: background-Color 500ms ;
-  animation: linear 1.5s ease-in;
+  
 }
 
 @keyframes selected {

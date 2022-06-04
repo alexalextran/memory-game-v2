@@ -13,6 +13,7 @@ const GameOver = (props) => {
    const [disable, setDisable] = useState(false)
    const [highestLevel, sethighestLevel] = useState(0)
    const [hlTime, sethlTime] = useState(0)
+   const tipsarray = [""]
   
  //get firestore document
 
@@ -22,17 +23,10 @@ const GameOver = (props) => {
         if (snapshot.exists()) {
             sethighestLevel(snapshot.data().Level)
             sethlTime(snapshot.data().Time)
-        ////
-
-     
-
             if (parseInt(snapshot.data().Level) < parseInt(props.highscore.level)) {
-              
-
                 addHighScore()
                 setnewScore(true) 
             } 
-       
         } else{
             setnewScore(true)
         }
