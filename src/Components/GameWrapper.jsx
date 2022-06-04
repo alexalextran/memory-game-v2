@@ -1,15 +1,35 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import GameBody from './GameBody';
 import ReactDOM from "react-dom";
 import { useTransition, animated } from 'react-spring';
 
 
 const GameWrapper = (props) => {
-    const transition = useTransition(props.remainingBoxes, {
-        from:{x: 0, y: 10, opacity: 0},
-        enter:{x: 0, y: 0, opacity: 1},
-        laeve:{x: 0, y: -10, opacity: 0},
+ 
+  
+  
+
+    useEffect(() => {
+        
+      console.log("gamewrapper rendered")
+       
+      
     })
+    
+  
+    const transition = useTransition(props.remainingBoxes, {
+        from:{x: 0, y: -10, opacity: 0},
+        enter:{x: 0, y: 0, opacity: 1},
+        laeve:{x: 0, y: 10, opacity: 0},
+       
+    })
+    const transition1 = useTransition(props.boxesRemaining, {
+        from:{x: 0, y: -10, opacity: 0},
+        enter:{x: 0, y: 0, opacity: 1},
+        laeve:{x: 0, y: 10, opacity: 0},
+    })
+
+   
 
  
     return (
@@ -21,18 +41,26 @@ const GameWrapper = (props) => {
                  </div>
                  <div className='header__info'>
                    <ul>
-                       <li>Level <span>{props.boxesRemaining}</span></li>
-                       <li>Boxes 
-                           {transition((style, item) =>
-                           
-                           <animated.div style = {style} id="r-b"> 
-                            {props.remainingBoxes}
-                           </animated.div>
-                           
+
+                       <li>
+                           Level
+                           {transition1((style, item) =>
+                           <animated.span style = {style}> 
+                            {props.boxesRemaining}
+                           </animated.span>
                            )}
-                         
+                           </li>
+
+                       <li>
+                           Boxes 
+                           {transition((style, item) =>
+                           <animated.span style = {style} > 
+                            {props.remainingBoxes}
+                           </animated.span>
+                           )}
                        </li>
-                       <li>Lives <span>0</span></li>
+
+                       <li>Lives <span>{props.lives}</span></li>
                        <li>Time <span>3</span></li>
                    </ul>
                  </div>

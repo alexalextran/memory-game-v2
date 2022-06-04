@@ -9,6 +9,8 @@ const Gamebody = (props) => {
     //when new level is started, remove clickability and execute startgame function
     clickable(false);
     startGame();
+    
+ 
 
     return () => {
       //when level finished reset all bg's and animations
@@ -51,8 +53,10 @@ const Gamebody = (props) => {
       document.getElementById(
         `box ${event.target.id.slice(4)}`
       ).style.backgroundColor = "red";
-
+      
+     
       lives--;
+      
 
       if (lives === 0) {
         endGame();

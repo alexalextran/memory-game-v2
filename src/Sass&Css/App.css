@@ -291,10 +291,6 @@ html li {
   color: white;
 }
 
-.game__wrapper .game__wrapper--header .header__info ul li #r-b {
-  bottom: 0rem;
-}
-
 #gamebody {
   background-color: #323639;
   display: -ms-grid;

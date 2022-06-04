@@ -7,19 +7,22 @@ const Game = (props) => {
     const [gameOver, setGameOver] = useState(false)
     const [highscore, setHighScore] = useState({})
     const [remainingBoxes, setremainingBoxes] = useState()
+   
+
 
     
-   
+ 
+    
     return (
         gameOver ?
         
         <GameOver highscore={highscore}/>
         :
 
-        <GameWrapper settutorial={props.settutorial} setboxesRemaining={setboxesRemaining} number={props.number} boxesRemaining={boxesRemaining} setGameOver={setGameOver} setremainingBoxes={setremainingBoxes} remainingBoxes={remainingBoxes} setHighScore={setHighScore}/>
+        <GameWrapper settutorial={props.settutorial} setboxesRemaining={setboxesRemaining} number={props.number} boxesRemaining={boxesRemaining} setGameOver={setGameOver} setremainingBoxes={setremainingBoxes} remainingBoxes={remainingBoxes} setHighScore={setHighScore}  />
     
        
     );
 }
 
-export default Game;
+export default React.memo(Game);
