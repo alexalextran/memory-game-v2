@@ -13,11 +13,16 @@ const GameOver = (props) => {
    const [disable, setDisable] = useState(false)
    const [highestLevel, sethighestLevel] = useState(0)
    const [hlTime, sethlTime] = useState(0)
-   const tipsarray = [""]
+   const tipsarray = [
+       "As each level goes on the time that each box is shown by increases by 85 miliseconds",
+       "The max level you can reach for each gridnumber you choose is (gridnumber - 2) so if your grid is 9 squares the max level is 7 (this is because you can't lose once you reach level 7",
+       "The gridsystem allows for high risk high reward since while it is easier to play using a smaller gridnumber, you are limited in the highscore you can reach"
+    ]
   
  //get firestore document
 
  useEffect(() => {
+   console.log(tipsarray)
     getDoc(docRef)
     .then((snapshot) => {
         if (snapshot.exists()) {
@@ -58,28 +63,35 @@ const GameOver = (props) => {
             loading ?
            <Loading />
             :
-        <div className='gameOver'>
+            <>
+            <div className='tips'>
+                <p>Tips and Hints</p>
+                {tipsarray[Math.floor(Math.random() * tipsarray.length)]}
+            </div>
+            <div className='gameOver'>
             <span className='gameover__title'>Game Over</span>
-            <p>Nice Job, you got up to level {props.highscore.level} with a time of {props.highscore.time} seconds</p>
+            <div>
+                <p>Nice Job, you got up to level {props.highscore.level} with a time of {props.highscore.time} seconds</p>
             <Link to="/leaderBoard" className="button">LeaderBoard</Link>
+            </div>
+            
             {
                 newScore ?
                 <div>
                     <p>Woah you got a new highscore</p>
                     <p>Your highscore has been updated</p>
-                      </div>
+                </div>
                  :
-                 <>
-                 <br></br>
+            
                  <div>
-                 
                 <p>Your current highest level is {highestLevel} with a time of {hlTime} seconds</p>
                 </div>
-                   </>
+        
 
             }
 
         </div>
+        </>
         }
         </>
 

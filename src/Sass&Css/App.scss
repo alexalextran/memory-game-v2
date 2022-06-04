@@ -196,19 +196,28 @@ background-color:  $boxColor;
 .gameOver{
   @include flexCenter(column);
   color: $mainTextColor;
-  height: 15rem;
+  height: 20rem;
   width: 45rem;
+  padding: 1rem 1rem;
+  border-radius: 1rem;
   @include absolutecenter;
   background-color: $discordblue;
   .gameover__title{
    @include titleheader;
    top: -5%;
   }
-}
 
-// #r-b{
-//  animation: fade 1s linear;
-// }
+  div{
+    height: 50%;
+    @include flexCenter(column);
+ 
+  }
+  & > div:nth-child(2){
+    margin-top: 3rem;
+    border-bottom: 2px solid black;
+    width: 100%;
+  }
+}
 
 
 @keyframes fade {
@@ -303,4 +312,11 @@ h2{
     transform: rotate(360deg);
   }
   
+}
+
+.tips{
+  @include absolutecenter;
+  text-align: center;
+  color: white;
+  top: 80%;
 }

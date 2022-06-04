@@ -61,7 +61,7 @@ const Gamebody = (props) => {
      document.getElementsByClassName("heart")[lives].style.fill = "black"
      document.getElementsByClassName("heart")[lives].style.animation = `heartloss 750ms ease-in`
      if(lives == 1){
-      document.getElementsByClassName("heart")[0].style.animation = `heartloss 750ms infinite ease-in`
+      document.getElementsByClassName("heart")[0].style.animation = `heartloss 750ms infinite 750ms ease-in`
      }
 
       if (lives === 0) {

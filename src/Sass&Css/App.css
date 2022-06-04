@@ -449,8 +449,10 @@ html li {
       -ms-flex-direction: column;
           flex-direction: column;
   color: #dddddd;
-  height: 15rem;
+  height: 20rem;
   width: 45rem;
+  padding: 1rem 1rem;
+  border-radius: 1rem;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -472,6 +474,29 @@ html li {
   -webkit-box-shadow: 0 10px 10px -2px #323639;
           box-shadow: 0 10px 10px -2px #323639;
   top: -5%;
+}
+
+.gameOver div {
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.gameOver > div:nth-child(2) {
+  margin-top: 3rem;
+  border-bottom: 2px solid black;
+  width: 100%;
 }
 
 @-webkit-keyframes fade {
@@ -697,5 +722,16 @@ html li {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
   }
+}
+
+.tips {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  top: 80%;
 }
 /*# sourceMappingURL=App.css.map */
