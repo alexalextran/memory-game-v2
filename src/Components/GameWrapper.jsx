@@ -1,21 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import GameBody from './GameBody';
-import ReactDOM from "react-dom";
 import { useTransition, animated } from 'react-spring';
-
+import { FaHeart } from 'react-icons/fa';
 
 const GameWrapper = (props) => {
- 
-  
-  
-
-    useEffect(() => {
-        
-      console.log("gamewrapper rendered")
-       
-      
-    })
-    
   
     const transition = useTransition(props.remainingBoxes, {
         from:{x: 0, y: -10, opacity: 0},
@@ -60,7 +48,12 @@ const GameWrapper = (props) => {
                            )}
                        </li>
 
-                       <li>Lives <span>{props.lives}</span></li>
+                       <li>Lives <span className='hearts'>
+                            <FaHeart style={{fill: "red"}} className="heart"/>
+                            <FaHeart style={{fill: "red"}} className="heart"/>
+                            <FaHeart style={{fill: "red"}} className="heart"/>
+                   
+                           </span></li>
                        <li>Time <span>3</span></li>
                    </ul>
                  </div>

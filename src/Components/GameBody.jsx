@@ -9,7 +9,7 @@ const Gamebody = (props) => {
     //when new level is started, remove clickability and execute startgame function
     clickable(false);
     startGame();
-    
+   
  
 
     return () => {
@@ -56,7 +56,8 @@ const Gamebody = (props) => {
       
      
       lives--;
-      
+     document.getElementsByClassName("heart")[lives].style.fill = "black"
+     document.getElementsByClassName("heart")[lives].style.animationName = "heartloss"
 
       if (lives === 0) {
         endGame();
@@ -80,6 +81,11 @@ const Gamebody = (props) => {
   }
 
   function startGame() {
+    Array.from(document.getElementsByClassName("heart")).forEach((heart) => {
+      heart.style.fill = "red";
+      heart.style.animationName = "none";
+    });
+
     //chosen all boxes and ensure that are chosen boxes are unique
     while (selectedBoxes.length !== props.boxesRemaining) {
       var random = Math.ceil(Math.random() * gridNumber);
