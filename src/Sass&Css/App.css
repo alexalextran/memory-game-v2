@@ -478,6 +478,7 @@ html li {
 
 .gameOver div {
   height: 50%;
+  font-size: 1.3rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -493,9 +494,17 @@ html li {
           flex-direction: column;
 }
 
+.gameOver div span {
+  color: #2ecc71;
+}
+
+.gameOver div > :nth-child(2) {
+  margin-top: 1rem;
+}
+
 .gameOver > div:nth-child(2) {
   margin-top: 3rem;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #2ecc71;
   width: 100%;
 }
 

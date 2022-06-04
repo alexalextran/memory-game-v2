@@ -74,7 +74,7 @@ const Gamebody = (props) => {
       clickable(false);
 
       //check if max number of boxes reached (win condition)
-      if (props.boxesRemaining === gridNumber) {
+      if (props.boxesRemaining === gridNumber -2) {
         endGame();
       }
 

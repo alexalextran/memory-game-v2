@@ -209,12 +209,18 @@ background-color:  $boxColor;
 
   div{
     height: 50%;
+    font-size: 1.3rem;
     @include flexCenter(column);
- 
+    span{
+      color: $spotifyGreen;
+    }
+    > :nth-child(2){
+      margin-top: 1rem;
+    }
   }
   & > div:nth-child(2){
     margin-top: 3rem;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid $spotifyGreen;
     width: 100%;
   }
 }
