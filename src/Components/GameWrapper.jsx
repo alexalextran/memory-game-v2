@@ -4,6 +4,21 @@ import { useTransition, animated } from 'react-spring';
 import { FaHeart } from 'react-icons/fa';
 
 const GameWrapper = (props) => {
+    useEffect(() => {
+        stop()
+      start()
+    
+      return () => {
+        stop()
+        props.setseconds(String(sec))
+      }
+      
+    },[])
+
+    
+var sec = 0
+var timerOn = 0
+var msecVar
   
     const transition = useTransition(props.remainingBoxes, {
         from:{x: 0, y: -10, opacity: 0},
@@ -17,6 +32,32 @@ const GameWrapper = (props) => {
         laeve:{x: 0, y: 10, opacity: 0},
     })
 
+    //timer function
+function setSec() {
+    sec = sec + 1;
+    props.setseconds(String(sec))
+    msecVar = setTimeout(setSec, 1000);
+    if(document.getElementById("sec") != null){
+        document.getElementById("sec").innerHTML = `<span>${sec}</span>`
+    }
+    else{
+        return
+    }
+    
+    
+}
+
+function start() {
+  if (!timerOn) {
+    timerOn = 1;
+    setSec();
+  }
+}
+
+function stop() {
+    clearTimeout(msecVar);
+    timerOn = 0;
+  }
    
 
  
@@ -54,11 +95,11 @@ const GameWrapper = (props) => {
                             <FaHeart style={{fill: "red"}} className="heart"/>
                    
                            </span></li>
-                       <li>Time <span>3</span></li>
+                       <li>Time <span id="sec">3</span></li>
                    </ul>
                  </div>
             </div>
-               <GameBody number={props.number} boxesRemaining={props.boxesRemaining} setboxesRemaining={props.setboxesRemaining} setGameOver={props.setGameOver} setHighScore={props.setHighScore} setremainingBoxes={props.setremainingBoxes}/>
+               <GameBody number={props.number} boxesRemaining={props.boxesRemaining} setboxesRemaining={props.setboxesRemaining} setGameOver={props.setGameOver} setHighScore={props.setHighScore} setremainingBoxes={props.setremainingBoxes} />
             </div>
         </div>
     );

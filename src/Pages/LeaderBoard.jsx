@@ -37,7 +37,6 @@ const LeaderBoard = () => {
     
 
        
-        console.log(sortedUserScores)
      
     
     

@@ -7,6 +7,7 @@ const Game = (props) => {
     const [gameOver, setGameOver] = useState(false)
     const [highscore, setHighScore] = useState({})
     const [remainingBoxes, setremainingBoxes] = useState()
+    const [seconds, setseconds] = useState(0)
    
 
 
@@ -16,10 +17,10 @@ const Game = (props) => {
     return (
         gameOver ?
         
-        <GameOver highscore={highscore}/>
+        <GameOver highscore={highscore} seconds={seconds}/>
         :
 
-        <GameWrapper settutorial={props.settutorial} setboxesRemaining={setboxesRemaining} number={props.number} boxesRemaining={boxesRemaining} setGameOver={setGameOver} setremainingBoxes={setremainingBoxes} remainingBoxes={remainingBoxes} setHighScore={setHighScore}  />
+        <GameWrapper settutorial={props.settutorial} setboxesRemaining={setboxesRemaining} number={props.number} boxesRemaining={boxesRemaining} setGameOver={setGameOver} setremainingBoxes={setremainingBoxes} remainingBoxes={remainingBoxes} setHighScore={setHighScore} highscore={highscore} setseconds={setseconds}/>
     
        
     );

@@ -5,6 +5,7 @@ import { Link} from 'react-router-dom';
 import Loading from './Loading';
 
 const GameOver = (props) => {
+  
    const { currentUser } = useAuth()
    const db = getFirestore();
    const docRef = doc(db, `users`, `${currentUser.uid}`);
@@ -27,18 +28,25 @@ const GameOver = (props) => {
         if (snapshot.exists()) {
             sethighestLevel(snapshot.data().Level)
             sethlTime(snapshot.data().Time)
-            if (parseInt(snapshot.data().Level) < parseInt(props.highscore.level)) {
+            if (parseInt(snapshot.data().Level) < parseInt(props.highscore.level) || 
+            (
+                parseInt(snapshot.data().Level) == parseInt(props.highscore.level) 
+                && 
+                parseInt(snapshot.data().Time) > (props.seconds)
+            ) 
+            ) {
                 addHighScore()
                 setnewScore(true) 
             } 
         } else{
+            addHighScore()
             setnewScore(true)
         }
         setLoading(false)
     })
  
-
-   
+    
+   console.log(props.highscore)
  }, []);
 
 
@@ -47,7 +55,7 @@ const GameOver = (props) => {
     function addHighScore(){
         setDoc(doc(db, "users", `${currentUser.uid}`),{
             Level: props.highscore.level,
-            Time: props.highscore.time,
+            Time: String(props.seconds),
             Name: currentUser.displayName,
             ProfilePic: currentUser.photoURL
         })
@@ -70,7 +78,7 @@ const GameOver = (props) => {
             <div className='gameOver'>
             <span className='gameover__title'>Game Over</span>
             <div>
-                <p>Nice Job, you got up to level <span>{props.highscore.level}</span> with a time of <span>{props.highscore.time}</span> seconds</p>
+                <p>Nice Job, you got up to level <span>{props.highscore.level}</span> with a time of <span>{props.seconds}</span> seconds</p>
                 <button onClick={() => window.location.reload()} className="button">Retry</button>
             </div>
             

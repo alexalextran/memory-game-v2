@@ -10,7 +10,7 @@ const Gamebody = (props) => {
     //when new level is started, remove clickability and execute startgame function
     clickable(false);
     startGame();
-   
+    console.log(props.seconds)
    
  
 
@@ -136,8 +136,7 @@ const Gamebody = (props) => {
 
   function endGame() {
     props.setHighScore({
-      level: `${props.boxesRemaining}`,
-      time: `${200}`,
+      level: `${props.boxesRemaining}`
     });
     props.setGameOver(true);
   }

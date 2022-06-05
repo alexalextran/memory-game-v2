@@ -148,6 +148,7 @@ html li {
   border: 2px solid white;
   -webkit-box-shadow: 0 10px 10px -2px #323639;
           box-shadow: 0 10px 10px -2px #323639;
+  width: 5rem;
 }
 
 .tutorial .tutorial__gif {
