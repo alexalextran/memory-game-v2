@@ -138,6 +138,10 @@ html li {
           flex-direction: column;
 }
 
+.tutorial .tutorial__info span {
+  color: #2ecc71;
+}
+
 .tutorial .tutorial__info .tutorial__userpic {
   position: absolute;
   top: -2.8rem;
@@ -205,7 +209,7 @@ html li {
 }
 
 .tutorial .tutorial__gridnumber {
-  width: 35rem;
+  width: 30rem;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;

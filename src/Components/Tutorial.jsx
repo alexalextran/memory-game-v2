@@ -40,7 +40,7 @@ const Tutorial = (props) => {
         </div>
 
         <div className='tutorial__gridnumber'>
-          <p>Please Enter a desired number below, this will determine how big your grid will be, so if you put 5, your grid will be 5 by 5 <br></br>(note min is 3 and max is 10)</p>
+          <p>Please Enter a desired number below, this will determine how big your grid will be, so if you put 5, your grid will be 5 by 5 <br></br>(note default is 6, min is 3 and max is 10)</p>
           <input  onChange={event =>
           {
             if(event.target.value > 10 || event.target.value < 3){

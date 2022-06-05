@@ -8,7 +8,7 @@ import Tutorial from '../Components/Tutorial';
 
 const Homepage = () => {
  const [tutorial, settutorial] = useState(true);
-const [number, setnumber] = useState(3);
+const [number, setnumber] = useState(6);
 
     return (
         <section>

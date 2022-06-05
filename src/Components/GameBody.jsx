@@ -4,13 +4,13 @@ import ReactDOM from "react-dom";
 
 const Gamebody = (props) => {
   var lives = 3;
-  var difficultyscale = 85;
+  var difficultyscale = 100;
 
   useEffect(() => {
     //when new level is started, remove clickability and execute startgame function
     clickable(false);
     startGame();
-    console.log(1000 + props.boxesRemaining*difficultyscale)
+   
    
  
 
@@ -39,7 +39,7 @@ const Gamebody = (props) => {
       ).style.pointerEvents = "none";
       document.getElementById(
         `box ${event.target.id.slice(4)}`
-      ).style.backgroundColor = "green";
+      ).style.backgroundColor = "rgb(46,204,113)";
 
       // find the index of the click box and remove it from the array
       var index = selectedBoxes.findIndex(
@@ -54,7 +54,7 @@ const Gamebody = (props) => {
       ).style.pointerEvents = "none";
       document.getElementById(
         `box ${event.target.id.slice(4)}`
-      ).style.backgroundColor = "red";
+      ).style.backgroundColor = "rgb(242,98,97)";
       
      
       lives--;

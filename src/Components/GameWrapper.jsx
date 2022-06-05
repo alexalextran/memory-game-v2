@@ -25,7 +25,7 @@ const GameWrapper = (props) => {
             <div className='game__wrapper'>
             <div className='game__wrapper--header'>
                  <div>
-                    <button onClick={() => props.settutorial(true)}>Back Home</button> <button onClick={() => props.setboxesRemaining(1)}>Reset Game</button>
+                    <button onClick={() => props.settutorial(true)}>Back Home</button>
                  </div>
                  <div className='header__info'>
                    <ul>

@@ -14,7 +14,7 @@ const GameOver = (props) => {
    const [highestLevel, sethighestLevel] = useState(0)
    const [hlTime, sethlTime] = useState(0)
    const tipsarray = [
-       "As each level goes on the time that each box is shown by increases by 85 miliseconds",
+       "As each level goes on the time that each box is shown by increases by 100 miliseconds, so once you reach level 10 the time for each box is 2 seconds",
        "The max level you can reach for each gridnumber you choose is (gridnumber - 2) so if your grid is 9 squares the max level is 7 (this is because you can't lose once you reach level 7",
        "The gridsystem allows for high risk high reward since while it is easier to play using a smaller gridnumber, you are limited in the highscore you can reach"
     ]
@@ -22,7 +22,6 @@ const GameOver = (props) => {
  //get firestore document
 
  useEffect(() => {
-   console.log(tipsarray)
     getDoc(docRef)
     .then((snapshot) => {
         if (snapshot.exists()) {
@@ -79,7 +78,7 @@ const GameOver = (props) => {
                 newScore ?
                 <div>
                     <p>Woah you beat your highscore (your highscore has been updated)</p>
-                    <button onClick={() => window.location.reload()} className="button">Retry</button>
+                    <Link to="/leaderBoard" className="button">LeaderBoard</Link>
                 </div>
                  :
             

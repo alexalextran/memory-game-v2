@@ -63,6 +63,9 @@ li{
   border-radius: 2rem;
   .tutorial__info{
     margin-top: 1.4rem;
+    span{
+      color: $spotifyGreen;
+    }
     @include flexCenter(column);
     .tutorial__userpic{
       position: absolute;
@@ -94,7 +97,7 @@ li{
     @include button;
   }
   .tutorial__gridnumber{
-    width: 35rem;
+    width: 30rem;
     text-align: center;
     display: flex;
     align-items: center;
