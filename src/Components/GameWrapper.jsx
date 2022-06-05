@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import GameBody from './GameBody';
 import { useTransition, animated } from 'react-spring';
 import { FaHeart } from 'react-icons/fa';

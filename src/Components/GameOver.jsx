@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '../Contexts/AuthContext';
-import { collection, doc, getDoc, getDocs, getFirestore, setDoc } from 'firebase/firestore/lite';
+import { doc, getDoc, getFirestore, setDoc } from 'firebase/firestore/lite';
 import { Link} from 'react-router-dom';
 import Loading from './Loading';
 
@@ -11,7 +11,6 @@ const GameOver = (props) => {
    const docRef = doc(db, `users`, `${currentUser.uid}`);
    const [loading, setLoading] = useState(true)
    const [newScore, setnewScore] = useState(false)
-   const [disable, setDisable] = useState(false)
    const [highestLevel, sethighestLevel] = useState(0)
    const [hlTime, sethlTime] = useState(0)
    const tipsarray = [
@@ -30,7 +29,7 @@ const GameOver = (props) => {
             sethlTime(snapshot.data().Time)
             if (parseInt(snapshot.data().Level) < parseInt(props.highscore.level) || 
             (
-                parseInt(snapshot.data().Level) == parseInt(props.highscore.level) 
+                parseInt(snapshot.data().Level) === parseInt(props.highscore.level) 
                 && 
                 parseInt(snapshot.data().Time) > (props.seconds)
             ) 

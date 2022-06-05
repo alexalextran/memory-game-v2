@@ -1,4 +1,4 @@
-import { collection, getDocs, getFirestore, setLogLevel } from 'firebase/firestore/lite';
+import { collection, getDocs, getFirestore } from 'firebase/firestore/lite';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import LeaderBoardPosition from '../Components/LeaderBoardPosition';
