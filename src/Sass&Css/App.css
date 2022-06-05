@@ -116,11 +116,13 @@ html li {
   background-color: #6362cb;
   padding: 1.6rem;
   width: 65%;
-  height: 80%;
+  height: 87%;
   z-index: 98;
+  border-radius: 2rem;
 }
 
 .tutorial .tutorial__info {
+  margin-top: 1.4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -136,10 +138,19 @@ html li {
           flex-direction: column;
 }
 
+.tutorial .tutorial__info .tutorial__userpic {
+  position: absolute;
+  top: -2.8rem;
+  border: 2px solid white;
+  -webkit-box-shadow: 0 10px 10px -2px #323639;
+          box-shadow: 0 10px 10px -2px #323639;
+}
+
 .tutorial .tutorial__gif {
-  width: 30rem;
-  height: 18rem;
-  margin: 2rem;
+  position: relative;
+  width: 25rem;
+  height: 13rem;
+  margin-top: 2rem;
   background-color: red;
 }
 
@@ -164,10 +175,6 @@ html li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-.tutorial span {
-  color: #e50914;
 }
 
 .tutorial img {
@@ -195,6 +202,59 @@ html li {
   -webkit-transform: translate(0px, 5px);
           transform: translate(0px, 5px);
   border-bottom: 1px solid #2ecc71;
+}
+
+.tutorial .tutorial__gridnumber {
+  width: 35rem;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tutorial .tutorial__gridnumber input {
+  color: white;
+  margin-bottom: 30px;
+  background-color: transparent;
+  padding: 1rem;
+  width: 4rem;
+  border: none;
+  outline: none;
+  -webkit-transition: border 500ms;
+  transition: border 500ms;
+  text-align: center;
+  border-bottom: 2px solid white;
+  font-size: 2rem;
+}
+
+.tutorial .tutorial__gridnumber input:focus {
+  outline: none;
+  border-bottom: 2px solid #2ecc71;
+  resize: none;
+}
+
+.tutorial .tutorial__gridnumber > * {
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.tutorial .tutorial__gridnumber div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .game__wrapper {

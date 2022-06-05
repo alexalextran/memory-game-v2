@@ -25,9 +25,10 @@ const Tutorial = (props) => {
     return (
         <section className='tutorial'>
              <div className='tutorial__info'>
+             <img className='tutorial__userpic' src={currentUser.photoURL}></img>
       
       <h2>Welcome <span>{currentUser.displayName}</span> to Memory Game V2!</h2>
-      <img src={currentUser.photoURL}></img>
+  
       <button onClick={handleLogout}>Logout</button>
 
       <div>
@@ -38,17 +39,32 @@ const Tutorial = (props) => {
             <img src={frog}></img>
         </div>
 
-        <div>
-          <input onChange={event => props.setnumber(event.target.value)} placeholder='Enter in your desired number of boxes'></input>
+        <div className='tutorial__gridnumber'>
+          <p>Please Enter a desired number below, this will determine how big your grid will be, so if you put 5, your grid will be 5 by 5 <br></br>(note min is 3 and max is 10)</p>
+          <input  onChange={event =>
+          {
+            if(event.target.value > 10 || event.target.value < 3){
+              props.setnumber(3)
+            } else{
+              props.setnumber(event.target.value)
+            }
+          }} ></input>
+
+          <div>
+          <button onClick={() => {props.settutorial(false)}}>
+            Start Game
+        </button>
+
+        <Link to="/leaderBoard" className="button">LeaderBoard</Link>
+        </div>
+          
+
         </div>
 
       
 
-        <button onClick={() => {props.settutorial(false)}}>
-            I know how to play
-        </button>
-
-       <Link to="/leaderBoard" className="button">LeaderBoard</Link>
+     
+       
 
       </div>
   </div>

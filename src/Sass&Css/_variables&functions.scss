@@ -120,3 +120,25 @@ $spotifyGreen: #2ecc71;
     border-radius: 0.5rem;
     box-shadow: 0 10px 10px -2px $darkmode;
 }
+
+@mixin input {
+  color: white;
+  margin-bottom: 30px;
+  background-color: transparent;
+  padding: 1rem;
+  width: 4rem;
+  
+  border: none;
+ outline: none;
+  transition: border 500ms;
+  text-align: center;
+  border-bottom: 2px solid white;
+  font-size: 2rem;
+
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid $spotifyGreen;
+    resize: none;
+  }
+}
+

@@ -68,7 +68,7 @@ const LeaderBoard = () => {
         />
       ))}
            
-            <Link to="/" className="button">Back Home</Link>
+            <Link to="/" className="button">Back</Link>
         
         </div>
         </div>
