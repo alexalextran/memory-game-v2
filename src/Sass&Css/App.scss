@@ -23,17 +23,31 @@ html{
 
 .card{
     @include flexCustom(space-around, center , column);
-    padding: 0px 1rem;
+    padding: 2rem;
     border-radius: 1rem;
     text-align: center;
-    width: 30%;
-    height: 40%;
-    background-color: $background;
+    width: 50%;
+    height: 70%;
+    background-color: $discordblue;
     z-index: 99;
+    color: white;
     @include absolutecenter;
+   img{
+     width: 5rem;
+   }
   button{
     @include button;
 }  
+h4{
+  margin-top: 2rem;
+}
+li{
+  margin: 0 auto;
+  width: fit-content;
+  margin-bottom: 0.6rem;
+  border-bottom: 2px solid $spotifyGreen;
+  
+}
 }
 
 

@@ -72,7 +72,7 @@ const GameOver = (props) => {
             <span className='gameover__title'>Game Over</span>
             <div>
                 <p>Nice Job, you got up to level <span>{props.highscore.level}</span> with a time of <span>{props.highscore.time}</span> seconds</p>
-            <Link to="/leaderBoard" className="button">LeaderBoard</Link>
+                <button onClick={() => window.location.reload()} className="button">Retry</button>
             </div>
             
             {
@@ -85,7 +85,7 @@ const GameOver = (props) => {
             
                  <div>
                 <p>Your current highest level is <span>{highestLevel} </span>with a time of <span>{hlTime}</span> seconds</p>
-                <button onClick={() => window.location.reload()} className="button">Retry</button>
+                <Link to="/leaderBoard" className="button">LeaderBoard</Link>
                 </div>
         
 

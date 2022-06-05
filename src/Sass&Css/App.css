@@ -51,18 +51,23 @@ html li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 0px 1rem;
+  padding: 2rem;
   border-radius: 1rem;
   text-align: center;
-  width: 30%;
-  height: 40%;
-  background-color: #e6e6e6;
+  width: 50%;
+  height: 70%;
+  background-color: #6362cb;
   z-index: 99;
+  color: white;
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+.card img {
+  width: 5rem;
 }
 
 .card button {
@@ -86,6 +91,19 @@ html li {
   -webkit-transform: translate(0px, 5px);
           transform: translate(0px, 5px);
   border-bottom: 1px solid #2ecc71;
+}
+
+.card h4 {
+  margin-top: 2rem;
+}
+
+.card li {
+  margin: 0 auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-bottom: 0.6rem;
+  border-bottom: 2px solid #2ecc71;
 }
 
 .tutorial {
