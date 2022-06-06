@@ -48,10 +48,10 @@ const LeaderBoard = () => {
             <Loading />
             :
    
-        <div className='leaderboard__wrapper'>
-               <span className='leaderboard__title'>LeaderBoard</span>
+       
+     
         <div className='leaderboard'>
-          
+                    <span className='leaderboard__title'>LeaderBoard</span>
 
            
          
@@ -70,7 +70,7 @@ const LeaderBoard = () => {
             <Link to="/" className="button">Back</Link>
         
         </div>
-        </div>
+
         }
         </>
     );
