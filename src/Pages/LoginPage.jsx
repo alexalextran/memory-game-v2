@@ -28,7 +28,7 @@ const Loginpage = () => {
     }
    
     return (
-        
+        <div className='wrapper'>
      <section className='signup' >
     
         <div className='card'>
@@ -53,11 +53,8 @@ const Loginpage = () => {
            </div>
             
         </div>
-        
-   
-
-   
         </section>
+        </div>
     );
 }
 

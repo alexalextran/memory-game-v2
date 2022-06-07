@@ -6,6 +6,19 @@
   font-family: "Roboto";
 }
 
+*::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+*::-webkit-scrollbar {
+  width: 0.45rem;
+  background-color: white;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #2ecc71;
+}
+
 html {
   background-color: #202124;
   font-size: 1vw;
@@ -51,23 +64,22 @@ html li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 2rem;
+  padding: 2em;
   border-radius: 1rem;
   text-align: center;
-  width: 50%;
-  height: 70%;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   background-color: #6362cb;
   z-index: 99;
   color: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
 }
 
 .card img {
-  width: 5rem;
+  width: 5em;
 }
 
 .card button {
@@ -106,17 +118,34 @@ html li {
   border-bottom: 2px solid #2ecc71;
 }
 
+.wrapper {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  padding-bottom: 3rem;
+}
+
 .tutorial {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  margin-top: 3rem;
   color: white;
   background-color: #6362cb;
   padding: 1.6rem;
   width: 65%;
-  height: 87%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   z-index: 98;
   border-radius: 2rem;
 }
@@ -143,8 +172,9 @@ html li {
 }
 
 .tutorial .tutorial__info .tutorial__userpic {
+  border-radius: 50%;
   position: absolute;
-  top: -2.8rem;
+  top: 0.4rem;
   border: 2px solid white;
   -webkit-box-shadow: 0 10px 10px -2px #323639;
           box-shadow: 0 10px 10px -2px #323639;
@@ -156,7 +186,7 @@ html li {
   width: 25rem;
   height: 13rem;
   margin-top: 2rem;
-  background-color: red;
+  border-radius: 0 !important;
 }
 
 .tutorial .tutorial__gif img {
@@ -180,10 +210,6 @@ html li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-.tutorial img {
-  border-radius: 50%;
 }
 
 .tutorial button {
@@ -263,11 +289,7 @@ html li {
 }
 
 .game__wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  margin-top: 3rem;
   background-color: #323639;
   width: 70%;
   height: 48rem;
@@ -531,16 +553,12 @@ html li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-top: 8rem;
   color: #dddddd;
   height: 20rem;
   width: 45rem;
   padding: 1rem 1rem;
   border-radius: 1rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   background-color: #6362cb;
 }
 
@@ -556,7 +574,7 @@ html li {
   border-radius: 0.5rem;
   -webkit-box-shadow: 0 10px 10px -2px #323639;
           box-shadow: 0 10px 10px -2px #323639;
-  top: -5%;
+  top: 6.5rem;
 }
 
 .gameOver div {
@@ -633,6 +651,7 @@ html li {
 
 .leaderboard {
   margin: 0 auto;
+  margin-top: 2rem;
   position: relative;
   background-color: #6362cb;
   border-radius: 1rem 0.5rem 0.5rem 1rem;
@@ -656,18 +675,15 @@ html li {
 }
 
 .leaderboard::-webkit-scrollbar-track {
-  border-radius: 0 2rem 2rem 0;
   background-color: white;
 }
 
 .leaderboard::-webkit-scrollbar {
-  border-radius: 0 2rem 2rem 0;
   width: 0.45rem;
   background-color: white;
 }
 
 .leaderboard::-webkit-scrollbar-thumb {
-  border-radius: 0 2rem 2rem 0;
   background-color: #2ecc71;
 }
 
@@ -801,13 +817,8 @@ html li {
 }
 
 .tips {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   text-align: center;
   color: white;
-  top: 80%;
+  margin-top: 4rem;
 }
 /*# sourceMappingURL=App.css.map */

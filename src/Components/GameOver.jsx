@@ -64,7 +64,7 @@ const GameOver = (props) => {
    
 
     return (
-        <>
+        <div className='wrapper'>
         {
             loading ?
            <Loading />
@@ -100,7 +100,7 @@ const GameOver = (props) => {
         </div>
         </>
         }
-        </>
+        </div>
 
     );
 }

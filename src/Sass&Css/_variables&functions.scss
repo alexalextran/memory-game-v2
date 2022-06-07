@@ -89,20 +89,18 @@ $spotifyGreen: #2ecc71;
     
  &::-webkit-scrollbar-track
  {  
-    border-radius: 0 2rem 2rem 0;  
      background-color: white;
  }
  
  &::-webkit-scrollbar
  {  
-    border-radius: 0 2rem 2rem 0;  
+   
      width: 0.45rem;
      background-color: white;
  }
  
  &::-webkit-scrollbar-thumb
- {  
-    border-radius: 0 2rem 2rem 0;   
+ {     
      background-color: $spotifyGreen;
     
  }

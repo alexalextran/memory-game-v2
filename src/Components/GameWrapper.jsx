@@ -62,7 +62,7 @@ function stop() {
 
  
     return (
-        <div>
+        <div className='wrapper'>
             <div className='game__wrapper'>
             <div className='game__wrapper--header'>
                  <div>

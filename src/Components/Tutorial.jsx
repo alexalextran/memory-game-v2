@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../Contexts/AuthContext';
 import useToggle from '../CustomHooks/UseToggle';
-import frog from '../assets/frog.png'
+import tutorial_gif from '../assets/tutorial_gif.gif'
 import { Link} from 'react-router-dom';
 
 const Tutorial = (props) => {
@@ -23,6 +23,7 @@ const Tutorial = (props) => {
   
 
     return (
+      <div className='wrapper'>
         <section className='tutorial'>
              <div className='tutorial__info'>
              <img className='tutorial__userpic' src={currentUser.photoURL}></img>
@@ -36,7 +37,7 @@ const Tutorial = (props) => {
         <p>For any new players, there is a tutorial provided below!</p>
 
         <div className='tutorial__gif'>
-            <img src={frog}></img>
+            <img src={tutorial_gif}></img>
         </div>
 
         <div className='tutorial__gridnumber'>
@@ -69,6 +70,7 @@ const Tutorial = (props) => {
       </div>
   </div>
         </section>
+        </div>
     );
 }
 

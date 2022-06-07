@@ -42,14 +42,13 @@ const LeaderBoard = () => {
     
  
     return (
-        <>
+        <div className='wrapper'>
         {
             loading ? 
             <Loading />
             :
    
        
-     
         <div className='leaderboard'>
                     <span className='leaderboard__title'>LeaderBoard</span>
 
@@ -72,7 +71,7 @@ const LeaderBoard = () => {
         </div>
 
         }
-        </>
+        </div>
     );
 }
 

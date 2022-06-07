@@ -5,6 +5,7 @@
     padding: 0;
   box-sizing: border-box;
   font-family: "Roboto";
+  @include scrollbar;
   
 }
 
@@ -23,17 +24,18 @@ html{
 
 .card{
     @include flexCustom(space-around, center , column);
-    padding: 2rem;
+    padding: 2em;
     border-radius: 1rem;
     text-align: center;
-    width: 50%;
-    height: 70%;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    height: fit-content;
     background-color: $discordblue;
     z-index: 99;
     color: white;
-    @include absolutecenter;
    img{
-     width: 5rem;
+     width: 5em;
    }
   button{
     @include button;
@@ -50,15 +52,22 @@ li{
 }
 }
 
-
+.wrapper{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+  padding-bottom: 3rem;
+}
 .tutorial{
- 
-  @include absolutecenter;
+  margin-top: 3rem;
   color: white;
   background-color: $discordblue;
   padding: 1.6rem;
   width: 65%;
-  height: 87%;
+  height: fit-content;
   z-index: 98;
   border-radius: 2rem;
   .tutorial__info{
@@ -68,8 +77,9 @@ li{
     }
     @include flexCenter(column);
     .tutorial__userpic{
+      border-radius: 50%;
       position: absolute;
-      top: -2.8rem;
+      top: 0.4rem;
       border: 2px solid white;
       box-shadow: 0 10px 10px -2px $darkmode;
       width: 5rem;
@@ -80,7 +90,7 @@ li{
     width: 25rem;
     height: 13rem;
     margin-top: 2rem;
-    background-color: red;
+    border-radius: 0 !important;
     img{
       object-fit: contain;
       width: 100%;
@@ -89,10 +99,6 @@ li{
   }
   div{
     @include flexCenter(column);
-  }
- 
-  img{
-    border-radius: 50%;
   }
   button{
     @include button;
@@ -118,7 +124,7 @@ li{
 
 
 .game__wrapper{
-  @include absolutecenter;
+  margin-top: 3rem;
   background-color: $darkmode;
   width: 70%;
   height: 48rem;
@@ -238,16 +244,16 @@ background-color:  $boxColor;
 
 .gameOver{
   @include flexCenter(column);
+  margin-top: 8rem;
   color: $mainTextColor;
   height: 20rem;
   width: 45rem;
   padding: 1rem 1rem;
   border-radius: 1rem;
-  @include absolutecenter;
   background-color: $discordblue;
   .gameover__title{
    @include titleheader;
-   top: -5%;
+   top: 6.5rem;
   }
 
   div{
@@ -280,8 +286,6 @@ background-color:  $boxColor;
   }
 }
 
-
-   
    .leaderboard__title{
   @include titleheader;
   }
@@ -289,6 +293,7 @@ background-color:  $boxColor;
 
 .leaderboard{
   margin: 0 auto;
+  margin-top: 2rem;
   position: relative;
   background-color: $discordblue;
   border-radius: 1rem 0.5rem 0.5rem 1rem;
@@ -361,8 +366,7 @@ h2{
 }
 
 .tips{
-  @include absolutecenter;
   text-align: center;
   color: white;
-  top: 80%;
+  margin-top: 4rem;
 }
