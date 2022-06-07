@@ -43,7 +43,7 @@ const Loginpage = () => {
             <li>More responsive squares, no more buggy clicks</li>
             <li>Cuztomizable grid, you aren't restricted to 6 by 6 anymore</li>
             <li>Difficulty Scaling, squares are shown for longer as the game goes on</li>
-            <li>Adjustable screen sizes, the game shouldn't look weird on different screens anymore</li>
+            <li>Adjustable screen sizes, game should work on all screen sizes (besides phones)</li>
             <li>Secure authentication, (no i don't have access to your data, its handled by google and firebase)</li>
             </ul>
            

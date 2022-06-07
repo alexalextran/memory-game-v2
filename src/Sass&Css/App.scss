@@ -27,7 +27,7 @@ html{
     padding: 2em;
     border-radius: 1rem;
     text-align: center;
-    width: 70%;
+    width: 85%;
     margin: 0 auto;
     margin-top: 6rem;
     height: fit-content;
@@ -369,4 +369,20 @@ h2{
   color: white;
   margin-top: 4rem;
   width: 50%;
+}
+
+.error{
+  @include absolutecenter;
+  @include flexCenter(column);
+  width: 50vw;
+  padding: 2rem;
+  border-radius: 2rem;
+  background-color: $discordblue;
+  color: white;
+  img{
+    width: 6rem;
+  }
+  button{
+    @include button
+  }
 }
