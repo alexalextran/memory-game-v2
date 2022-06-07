@@ -69,7 +69,7 @@ html li {
   text-align: center;
   width: 70%;
   margin: 0 auto;
-  margin-top: 2rem;
+  margin-top: 6rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -819,5 +819,6 @@ html li {
   text-align: center;
   color: white;
   margin-top: 4rem;
+  width: 50%;
 }
 /*# sourceMappingURL=App.css.map */
